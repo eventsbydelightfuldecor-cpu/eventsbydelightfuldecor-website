@@ -1,0 +1,44 @@
+# Node modules
+node_modules/
+
+# macOS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Large video and image files (too big for GitHub - need compression)
+videos/Hero_Video_2.mp4
+
+# Large images that need compression
+images/Corporate/service-wedding.jpg
+images/Corporate/quick-link-contact.jpg
+images/Corporate/gallery-corprate-4.jpg
+images/Corporate/gallery-wedding-3.jpg
+images/Corporate/gallery-wedding-1.jpg
+images/Private Party/testimonial-featured.jpg
+images/Private Party/gallery-private_party10.jpg.jpg
+images/Private Party/gallery-wedding-2.jpg
+

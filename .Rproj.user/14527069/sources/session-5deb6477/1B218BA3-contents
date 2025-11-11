@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Events By Delightful Decor</title>
+    <meta name="description" content="View our stunning portfolio of weddings, corporate events, and private parties. See the attention to detail in every event we plan.">
+    <meta name="keywords" content="Boston wedding photos, event planning portfolio, corporate event gallery, luxury wedding photos, event design Boston, wedding gallery, Boston event photos">
+    <meta property="og:title" content="Event Gallery - Wedding & Event Photos | Events By Delightful Decor">
+    <meta property="og:description" content="View our stunning portfolio of weddings, corporate events, and private parties. See the attention to detail and passion in every event we plan.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eventsbydelightfuldecor.com/pages/gallery.html">
+    <meta property="og:image" content="https://eventsbydelightfuldecor.com/images/wedding_img/gallery-wedding-5.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Event Gallery - Events By Delightful Decor">
+    <meta name="twitter:description" content="View our stunning portfolio of weddings, corporate events, and private parties in Boston.">
+    <meta name="twitter:image" content="https://eventsbydelightfuldecor.com/images/wedding_img/gallery-wedding-5.jpg">
+    <link rel="canonical" href="https://eventsbydelightfuldecor.com/pages/gallery.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Gallery</h1>
+            <p class="page-subtitle">Get a behind-the-scenes look into the past events we have created for our clients. Our pictures showcase the attention to detail and passion we put into every event we plan.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Categories -->
+    <section class="gallery-categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All Events</button>
+                <button class="filter-btn" data-category="weddings">Weddings</button>
+                <button class="filter-btn" data-category="corporate">Corporate</button>
+                <button class="filter-btn" data-category="private">Private Parties</button>
+                <button class="filter-btn" data-category="nonprofit">Nonprofit</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Magazine Button -->
+    <section class="magazine-section">
+        <div class="container">
+            <a href="bookshelf-magazine.html" class="magazine-button" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <i class="fas fa-book-open"></i>
+                Check Out Our Latest Issue
+            </a>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- WEDDING IMAGES -->
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/nat_wedding.jpg" alt="Elegant Wedding Ceremony">
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/nat_wedding_2.jpg" alt="Elegant Wedding Ceremony">
+                </div>
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/nat_wedding_3.jpg" alt="Elegant Wedding Ceremony">
+                </div>
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/nat_wedding_4.jpg" alt="Elegant Wedding Ceremony">
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/gallery-wedding-5.jpg" alt="Wedding Reception">
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/gallery-wedding-bw.jpg" alt="Black & White Wedding">
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/gallery-wedding-8.jpg" alt="Wedding Celebration">
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/gallery-wedding.jpg" alt="Wedding Ceremony">
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/gallery-wedding-6.jpg" alt="Wedding Details">
+                </div>
+
+                <!-- Additional wedding images from other folders -->
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/c_wedding_5.jpg" alt="Wedding Setup">
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/n_wedding_1.jpg" alt="Wedding Decorations">
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/n_wedding_2.jpg" alt="Wedding Reception">
+                </div>
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/n_wedding_3.jpg" alt="Wedding Reception">
+                </div>
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/n_wedding_4.jpg" alt="Wedding Reception">
+                </div>
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/n_wedding_5.jpg" alt="Wedding Reception">
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/c_wedding_1.jpg" alt="Wedding Setup">
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/c_wedding_2.jpg" alt="Wedding Decorations">
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/c_wedding_3.jpg" alt="Wedding Reception">
+                </div>
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/c_wedding_4.jpg" alt="Wedding Reception">
+                </div>
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/c_wedding_5.jpg" alt="Wedding Reception">
+                </div>
+                   <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/gallery-private-1.jpg" alt="Private Gathering">
+                </div>
+
+                <div class="gallery-item" data-category="weddings">
+                    <img src="../images/wedding_img/gallery-private-2.jpg" alt="Private Celebration">
+                </div>
+
+                <!-- CORPORATE IMAGES -->
+                <div class="gallery-item" data-category="corporate">
+                    <img src="../images/Corporate/galler.jpg" alt="Corporate Event">
+                </div>
+
+                <div class="gallery-item" data-category="corporate">
+                    <img src="../images/Corporate/gallery-corprate-4.jpg" alt="Corporate Conference">
+                </div>
+
+                <div class="gallery-item" data-category="corporate">
+                    <img src="../images/Corporate/gallery-corprate-6.png" alt="Corporate Meeting">
+                </div>
+
+                <div class="gallery-item" data-category="corporate">
+                    <img src="../images/Corporate/quick-link-contact.jpg" alt="Corporate Gathering">
+                </div>
+
+                <!-- PRIVATE PARTY IMAGES -->
+                <div class="gallery-item" data-category="private">
+                    <img src="../images/Private Party/gallery-private_party-3.jpg" alt="Private Party Celebration">
+                </div>
+
+                <div class="gallery-item" data-category="private">
+                    <img src="../images/Private Party/gallery-private-party-10.jpg" alt="Private Event">
+                </div>
+
+                <div class="gallery-item" data-category="private">
+                    <img src="../images/Private Party/gallery-private-party-9.jpg" alt="Private Celebration">
+                </div>
+
+                <div class="gallery-item" data-category="private">
+                    <img src="../images/Private Party/gallery-private.jpg" alt="Private Party">
+                </div>
+
+                <div class="gallery-item" data-category="private">
+                    <img src="../images/Private Party/gallery-private_party5.jpg" alt="Private Party">
+                </div>
+
+                <div class="gallery-item" data-category="private">
+                    <img src="../images/Private Party/gallery-private_party4.jpg" alt="Private Party">
+                </div>
+
+                <div class="gallery-item" data-category="private">
+                    <img src="../images/Private Party/gallery-private_party6.jpg" alt="Private Party">
+                </div>
+
+                <div class="gallery-item" data-category="private">
+                    <img src="../images/Private Party/gallery-private_party7.jpg" alt="Private Party">
+                </div>
+
+                <div class="gallery-item" data-category="private">
+                    <img src="../images/Private Party/gallery-private_party8.jpg" alt="Private Party">
+                </div>
+
+                <div class="gallery-item" data-category="private">
+                    <img src="../images/Private Party/gallery-private_party9.jpg" alt="Private Party">
+                </div>
+
+                <div class="gallery-item" data-category="private">
+                    <img src="../images/Private Party/gallery-private_party-3.jpg" alt="Private Party">
+                </div>
+
+
+
+                <!-- Additional private party images from Corporate folder -->
+                <div class="gallery-item" data-category="private">
+                    <img src="../images/Corporate/gallery-private-party-11.jpg" alt="Private Party Event">
+                </div>
+
+                <div class="gallery-item" data-category="private">
+                    <img src="../images/Corporate/gallery-private-party.jpg" alt="Private Party Celebration">
+                </div>
+
+                <!-- NONPROFIT IMAGES -->
+                <div class="gallery-item" data-category="nonprofit">
+                    <img src="../images/Nonprofit/nonprofit-1.jpg" alt="Nonprofit Event">
+                </div>
+
+                <div class="gallery-item" data-category="nonprofit">
+                    <img src="../images/Nonprofit/nonprofit-2.jpg" alt="Nonprofit Gathering">
+                </div>
+
+                <div class="gallery-item" data-category="nonprofit">
+                    <img src="../images/Nonprofit/nonprofit-3.jpg" alt="Nonprofit Celebration">
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Create Your Own Masterpiece?</h2>
+            <p class="cta-description">Let us bring your vision to life with the same attention to detail you see here.</p>
+            <a href="contact.html" class="cta-button">Start Planning</a>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Image Modal Lightbox -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-caption"></div>
+        </div>
+    </div>
+
+    <!-- Wedding Magazine Flipbook Modal -->
+    <div id="magazineModal" class="magazine-modal">
+        <div class="magazine-modal-overlay"></div>
+        <div class="magazine-modal-content">
+            <button class="magazine-close" aria-label="Close Magazine">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <!-- Loading Indicator -->
+            <div class="flipbook-loading" id="flipbookLoading">
+                <div class="loading-spinner-flipbook"></div>
+                <p>Loading Magazine...</p>
+            </div>
+
+            <div class="book-wrapper">
+                <div class="book-container">
+                    <div class="book" id="book">
+                        <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Front cover page.jpg" alt="Front Cover"/></div>
+                        <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Page_1.jpg" alt="Page 1"/></div>
+                        <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Page_2.jpg" alt="Page 2"/></div>
+                        <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Page_3.jpg" alt="Page 3"/></div>
+                        <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Page_4.jpg" alt="Page 4"/></div>
+                        <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Page_5.jpg" alt="Page 5"/></div>
+                        <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Back_Cover.jpg" alt="Back Cover"/></div>
+                    </div>
+                </div>
+
+                <!-- Navigation Controls -->
+                <div class="flipbook-controls">
+                    <button class="flipbook-control-btn" id="prevPage" title="Previous Page">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="page-indicator" id="pageIndicator">
+                        <span id="currentPage">1</span> / <span id="totalPages">7</span>
+                    </div>
+                    <button class="flipbook-control-btn" id="nextPage" title="Next Page">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Helper Text -->
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Load jQuery first -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
+
+    <!-- Load Turn.js library (without auto-init) -->
+    <script src="../js/turn-lib.js"></script>
+
+    <!-- Then load page-specific scripts -->
+    <script src="../js/components.js?v=2.0"></script>
+    <script src="../js/scripts.js?v=2.0"></script>
+
+    <script>
+        // Gallery filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const category = this.getAttribute('data-category');
+
+                    galleryItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                            item.classList.add('fade-in');
+                        } else {
+                            item.style.display = 'none';
+                            item.classList.remove('fade-in');
+                        }
+                    });
+                });
+            });
+
+            // Modal lightbox functionality
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.querySelector('.modal-caption');
+            const closeBtn = document.querySelector('.close');
+
+            // Add click event to all gallery images
+            galleryItems.forEach(item => {
+                const img = item.querySelector('img');
+                if (img) {
+                    img.addEventListener('click', function() {
+                        modal.style.display = 'block';
+                        modalImg.src = this.src;
+                        modalCaption.textContent = this.alt;
+                        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                    });
+                }
+            });
+
+            // Close modal functionality
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            });
+
+            // Close modal when clicking outside the image
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto'; // Restore scrolling
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto'; // Restore scrolling
+                }
+            });
+
+        });
+
+        // ===== ENHANCED WEDDING MAGAZINE FLIPBOOK FUNCTIONALITY =====
+        var flipbookInitialized = false;
+        var $bookEl = null;
+        var totalPages = 7;
+
+        var FlipbookManager = {
+            ratio: 1.38,
+            el: null,
+            isInitialized: false,
+
+            init: function(id) {
+                var me = this;
+                this.el = document.getElementById(id);
+
+                if (!this.el) {
+                    console.error('Book element not found!');
+                    return false;
+                }
+
+                console.log('Initializing flipbook...');
+                this.resize();
+                this.initializeTurnJS();
+
+                // Handle window resize with debounce
+                let resizeTimeout;
+                window.addEventListener('resize', function() {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(function() {
+                        if (me.el && $bookEl && $bookEl.turn) {
+                            var size = me.resize();
+                            $bookEl.turn('size', size.width, size.height);
+                        }
+                    }, 250);
+                });
+
+                return true;
+            },
+
+            resize: function() {
+                if (!this.el) return { width: 0, height: 0 };
+
+                this.el.style.width = '';
+                this.el.style.height = '';
+
+                var containerWidth = this.el.parentElement.clientWidth * 0.9;
+                var containerHeight = this.el.parentElement.clientHeight * 0.85;
+
+                var width = containerWidth;
+                var height = Math.round(width / this.ratio);
+
+                if (height > containerHeight) {
+                    height = containerHeight;
+                    width = Math.round(height * this.ratio);
+                }
+
+                this.el.style.width = width + 'px';
+                this.el.style.height = height + 'px';
+
+                return { width: width, height: height };
+            },
+
+            initializeTurnJS: function() {
+                if (!this.el || typeof $ === 'undefined' || typeof $.fn.turn === 'undefined') {
+                    console.error('Dependencies not loaded');
+                    return false;
+                }
+
+                $bookEl = $(this.el);
+
+                // Initialize Turn.js with enhanced options
+                $bookEl.turn({
+                    gradients: true,
+                    acceleration: true,
+                    display: 'double',
+                    duration: 800,
+                    elevation: 50,
+                    when: {
+                        turning: function(event, page, view) {
+                            FlipbookManager.updatePageIndicator(page);
+                        },
+                        turned: function(event, page, view) {
+                            FlipbookManager.updatePageIndicator(page);
+                            FlipbookManager.updateNavigationButtons(page);
+                        }
+                    }
+                });
+
+                this.isInitialized = true;
+                flipbookInitialized = true;
+                console.log('Turn.js initialized successfully');
+
+                // Initial page indicator update
+                this.updatePageIndicator(1);
+                this.updateNavigationButtons(1);
+
+                return true;
+            },
+
+            updatePageIndicator: function(page) {
+                const currentPageEl = document.getElementById('currentPage');
+                if (currentPageEl) {
+                    currentPageEl.textContent = page || 1;
+                }
+            },
+
+            updateNavigationButtons: function(page) {
+                const prevBtn = document.getElementById('prevPage');
+                const nextBtn = document.getElementById('nextPage');
+
+                if (prevBtn) {
+                    prevBtn.disabled = page <= 1;
+                    prevBtn.style.opacity = page <= 1 ? '0.3' : '1';
+                    prevBtn.style.cursor = page <= 1 ? 'not-allowed' : 'pointer';
+                }
+
+                if (nextBtn) {
+                    nextBtn.disabled = page >= totalPages;
+                    nextBtn.style.opacity = page >= totalPages ? '0.3' : '1';
+                    nextBtn.style.cursor = page >= totalPages ? 'not-allowed' : 'pointer';
+                }
+            },
+
+            nextPage: function() {
+                if ($bookEl && $bookEl.turn) {
+                    $bookEl.turn('next');
+                }
+            },
+
+            previousPage: function() {
+                if ($bookEl && $bookEl.turn) {
+                    $bookEl.turn('previous');
+                }
+            },
+
+            goToPage: function(pageNum) {
+                if ($bookEl && $bookEl.turn) {
+                    $bookEl.turn('page', pageNum);
+                }
+            }
+        };
+
+        // Preload images function
+        function preloadFlipbookImages(callback) {
+            const images = document.querySelectorAll('#book .page img');
+            let loadedCount = 0;
+            const totalImages = images.length;
+
+            if (totalImages === 0) {
+                callback();
+                return;
+            }
+
+            images.forEach(function(img) {
+                if (img.complete) {
+                    loadedCount++;
+                    if (loadedCount === totalImages) callback();
+                } else {
+                    img.addEventListener('load', function() {
+                        loadedCount++;
+                        if (loadedCount === totalImages) callback();
+                    });
+                    img.addEventListener('error', function() {
+                        loadedCount++;
+                        if (loadedCount === totalImages) callback();
+                    });
+                }
+            });
+        }
+
+        // DOM Ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, setting up magazine flipbook...');
+
+            const magazineBtn = document.getElementById('magazineBtn');
+            const magazineModal = document.getElementById('magazineModal');
+            const magazineClose = document.querySelector('.magazine-close');
+            const loadingIndicator = document.getElementById('flipbookLoading');
+            const prevPageBtn = document.getElementById('prevPage');
+            const nextPageBtn = document.getElementById('nextPage');
+
+            // Set total pages
+            document.getElementById('totalPages').textContent = totalPages;
+
+            // Open magazine modal
+            if (magazineBtn) {
+                magazineBtn.addEventListener('click', function() {
+                    console.log('Opening magazine...');
+                    magazineModal.style.display = 'flex';
+                    document.body.classList.add('hide-overflow');
+
+                    // Show loading indicator
+                    if (loadingIndicator) {
+                        loadingIndicator.style.display = 'flex';
+                    }
+
+                    setTimeout(function() {
+                        if (typeof $ === 'undefined' || typeof $.fn.turn === 'undefined') {
+                            alert('Error: Required libraries not loaded. Please refresh the page.');
+                            return;
+                        }
+
+                        // Preload images then initialize
+                        preloadFlipbookImages(function() {
+                            console.log('All images loaded');
+
+                            if (!flipbookInitialized) {
+                                FlipbookManager.init('book');
+                            } else if ($bookEl && $bookEl.turn) {
+                                var size = FlipbookManager.resize();
+                                $bookEl.turn('size', size.width, size.height);
+                                $bookEl.turn('page', 1);
+                                FlipbookManager.updatePageIndicator(1);
+                                FlipbookManager.updateNavigationButtons(1);
+                            }
+
+                            // Hide loading indicator
+                            if (loadingIndicator) {
+                                loadingIndicator.style.display = 'none';
+                            }
+                        });
+                    }, 300);
+                });
+            }
+
+            // Navigation buttons
+            if (prevPageBtn) {
+                prevPageBtn.addEventListener('click', function() {
+                    FlipbookManager.previousPage();
+                });
+            }
+
+            if (nextPageBtn) {
+                nextPageBtn.addEventListener('click', function() {
+                    FlipbookManager.nextPage();
+                });
+            }
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (magazineModal.style.display === 'flex' || magazineModal.style.display === 'block') {
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        FlipbookManager.previousPage();
+                    } else if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        FlipbookManager.nextPage();
+                    } else if (e.key === 'Escape') {
+                        closeModal();
+                    }
+                }
+            });
+
+            // Close modal function
+            function closeModal() {
+                magazineModal.style.display = 'none';
+                document.body.classList.remove('hide-overflow');
+            }
+
+            // Close button
+            if (magazineClose) {
+                magazineClose.addEventListener('click', closeModal);
+            }
+
+            // Close on overlay click
+            const overlay = document.querySelector('.magazine-modal-overlay');
+            if (overlay) {
+                overlay.addEventListener('click', closeModal);
+            }
+        });
+    </script>
+</body>
+</html>

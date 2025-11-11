@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Magazine - Events By Delightful Decor</title>
+    <meta name="description" content="Explore our beautiful wedding magazine featuring real events and design inspiration.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Bookshelf Scene Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            overflow: hidden;
+        }
+
+        .bookshelf-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            perspective: 1500px;
+        }
+
+        .bookshelf {
+            width: 95%;
+            max-width: 1400px;
+            height: 80vh;
+            max-height: 700px;
+            background: linear-gradient(180deg, #3d2f1f 0%, #2d1f0f 100%);
+            border-radius: 10px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            border: 2px solid rgba(139, 90, 43, 0.5);
+        }
+
+        /* Shelf rows */
+        .shelf-row {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            gap: 40px;
+            padding: 0 40px 15px;
+            position: relative;
+            flex: 1;
+        }
+
+        /* Shelf surface */
+        .shelf-surface {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: linear-gradient(180deg, #5d3a1a 0%, #3d2a0a 100%);
+            border-top: 1px solid rgba(139, 90, 43, 0.8);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Back wall texture */
+        .bookshelf::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 0, 0, 0.03) 2px,
+                    rgba(0, 0, 0, 0.03) 4px
+                );
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Magazine display */
+        .magazine-display {
+            position: relative;
+            width: 200px;
+            height: 260px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .magazine-display:hover {
+            transform: translateY(-10px) scale(1.02);
+            filter: brightness(1.15);
+        }
+
+        .magazine-cover {
+            width: 100%;
+            height: 100%;
+            border-radius: 3px;
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(0, 0, 0, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            position: relative;
+            background: white;
+        }
+
+        .magazine-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Spine effect */
+        .magazine-cover::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: linear-gradient(90deg, 
+                rgba(0, 0, 0, 0.4) 0%,
+                rgba(0, 0, 0, 0.1) 50%,
+                transparent 100%);
+            pointer-events: none;
+        }
+
+        /* Shine effect on hover */
+        .magazine-cover::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 70%
+            );
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+            pointer-events: none;
+        }
+
+        .magazine-display:hover .magazine-cover::after {
+            transform: translateX(100%);
+        }
+
+        /* Close button for bookshelf */
+        .bookshelf-close {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .bookshelf-close:hover {
+            background: rgba(212, 165, 116, 0.8);
+            border-color: #D4A574;
+            transform: rotate(90deg);
+        }
+
+        /* Flipbook Modal - Hidden initially */
+        .flipbook-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.98);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .flipbook-modal.active {
+            display: flex;
+        }
+
+        .flipbook-wrapper {
+            width: 95vw;
+            height: 95vh;
+            max-width: 1400px;
+            max-height: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Flipbook container */
+        .flipbook-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 40px 140px;
+            box-sizing: border-box;
+        }
+
+        .book {
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+        }
+
+        .book .page {
+            height: 100%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+        }
+
+        .book .page img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Navigation controls */
+        .flipbook-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 30px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .flipbook-control-btn {
+            background: rgba(212, 165, 116, 0.2);
+            border: 2px solid #D4A574;
+            color: #D4A574;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .flipbook-control-btn:hover:not(:disabled) {
+            background: #D4A574;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .flipbook-control-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .page-indicator {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .page-indicator span {
+            color: #D4A574;
+        }
+
+        /* Close flipbook button */
+        .flipbook-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .flipbook-close:hover {
+            background: rgba(212, 165, 116, 0.8);
+            border-color: #D4A574;
+            transform: rotate(90deg);
+        }
+
+
+        /* Loading indicator */
+        .flipbook-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(212, 165, 116, 0.2);
+            border-top-color: #D4A574;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .flipbook-loading p {
+            color: #D4A574;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .bookshelf {
+                height: 65vh;
+                max-height: 600px;
+                padding: 20px;
+            }
+
+            .shelf-row {
+                gap: 25px;
+                padding: 0 25px 12px;
+            }
+
+            .magazine-display {
+                width: 160px;
+                height: 210px;
+            }
+
+            .flipbook-content {
+                padding: 80px 20px 120px;
+            }
+
+            .flipbook-controls {
+                bottom: 20px;
+                padding: 10px 20px;
+                gap: 1rem;
+            }
+
+            .flipbook-control-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bookshelf {
+                padding: 15px;
+                max-height: 500px;
+            }
+
+            .shelf-row {
+                gap: 15px;
+                padding: 0 15px 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .magazine-display {
+                width: 130px;
+                height: 170px;
+            }
+
+            .flipbook-content {
+                padding: 70px 15px 110px;
+            }
+
+            .flipbook-control-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bookshelf Scene -->
+    <div class="bookshelf-container" id="bookshelfScene">
+        <button class="bookshelf-close" onclick="closeBookshelf()">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="bookshelf">
+            <!-- Single Shelf -->
+            <div class="shelf-row">
+                <div class="magazine-display" data-magazine="caribbean">
+                    <div class="magazine-cover">
+                        <img src="../images/turn-js-flipbook-2-1/Wedding Mag/Front cover page.jpg" alt="Caribbean Dream Wedding Magazine">
+                    </div>
+                </div>
+                <div class="shelf-surface"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flipbook Modal -->
+    <div class="flipbook-modal" id="flipbookModal">
+        <div class="flipbook-wrapper">
+            <button class="flipbook-close" onclick="closeFlipbook()">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="flipbook-loading" id="flipbookLoading">
+                <div class="loading-spinner"></div>
+                <p>Loading Magazine...</p>
+            </div>
+
+            <div class="flipbook-content">
+                <div class="book" id="book">
+                    <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Front cover page.jpg" alt="Front Cover"/></div>
+                    <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Page_1.jpg" alt="Page 1"/></div>
+                    <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Page_2.jpg" alt="Page 2"/></div>
+                    <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Page_3.jpg" alt="Page 3"/></div>
+                    <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Page_4.jpg" alt="Page 4"/></div>
+                    <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Page_5.jpg" alt="Page 5"/></div>
+                    <div class="page"><img src="../images/turn-js-flipbook-2-1/Wedding Mag/Back_Cover.jpg" alt="Back Cover"/></div>
+                </div>
+            </div>
+
+            <div class="flipbook-controls">
+                <button class="flipbook-control-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="page-indicator">
+                    <span id="currentPage">1</span> / <span id="totalPages">7</span>
+                </div>
+                <button class="flipbook-control-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load jQuery and Turn.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="../js/turn-lib.js"></script>
+
+    <script>
+        let flipbookInitialized = false;
+        let $bookEl = null;
+        const totalPages = 7;
+
+        // Magazine cover click handler - handle all magazines
+        document.querySelectorAll('.magazine-display').forEach(magazine => {
+            magazine.addEventListener('click', function() {
+                openFlipbook();
+            });
+        });
+
+        function openFlipbook() {
+            const modal = document.getElementById('flipbookModal');
+            const loading = document.getElementById('flipbookLoading');
+            
+            modal.classList.add('active');
+            loading.style.display = 'flex';
+            
+            // Preload images then initialize
+            setTimeout(() => {
+                preloadImages(() => {
+                    if (!flipbookInitialized) {
+                        initializeFlipbook();
+                    } else {
+                        resetFlipbook();
+                    }
+                    loading.style.display = 'none';
+                });
+            }, 300);
+        }
+
+        function closeFlipbook() {
+            document.getElementById('flipbookModal').classList.remove('active');
+        }
+
+        function closeBookshelf() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.close();
+            }
+        }
+
+        // Preload images
+        function preloadImages(callback) {
+            const images = document.querySelectorAll('#book .page img');
+            let loadedCount = 0;
+            
+            images.forEach(img => {
+                if (img.complete) {
+                    loadedCount++;
+                    if (loadedCount === images.length) callback();
+                } else {
+                    img.onload = () => {
+                        loadedCount++;
+                        if (loadedCount === images.length) callback();
+                    };
+                }
+            });
+        }
+
+        // Initialize flipbook
+        function initializeFlipbook() {
+            const bookEl = document.getElementById('book');
+            $bookEl = $(bookEl);
+
+            // Calculate size with proper padding
+            const container = bookEl.parentElement;
+            const containerWidth = container.clientWidth - 80; // Account for padding
+            const containerHeight = container.clientHeight - 40; // Account for padding
+            const ratio = 1.38; // Width to height ratio for double-page spread
+            
+            let width = containerWidth;
+            let height = width / ratio;
+            
+            // Ensure it fits vertically with room to spare
+            if (height > containerHeight * 0.9) {
+                height = containerHeight * 0.9;
+                width = height * ratio;
+            }
+
+            bookEl.style.width = width + 'px';
+            bookEl.style.height = height + 'px';
+
+            // Initialize Turn.js
+            $bookEl.turn({
+                gradients: true,
+                acceleration: true,
+                display: 'double',
+                duration: 800,
+                elevation: 50,
+                when: {
+                    turning: function(e, page) {
+                        updatePageIndicator(page);
+                    },
+                    turned: function(e, page) {
+                        updatePageIndicator(page);
+                        updateButtons(page);
+                    }
+                }
+            });
+
+            flipbookInitialized = true;
+            updatePageIndicator(1);
+            updateButtons(1);
+
+            // Handle resize
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    if ($bookEl && $bookEl.turn) {
+                        const size = calculateSize();
+                        $bookEl.turn('size', size.width, size.height);
+                    }
+                }, 250);
+            });
+        }
+
+        function calculateSize() {
+            const bookEl = document.getElementById('book');
+            const container = bookEl.parentElement;
+            const containerWidth = container.clientWidth - 80;
+            const containerHeight = container.clientHeight - 40;
+            const ratio = 1.38;
+            
+            let width = containerWidth;
+            let height = width / ratio;
+            
+            if (height > containerHeight * 0.9) {
+                height = containerHeight * 0.9;
+                width = height * ratio;
+            }
+
+            bookEl.style.width = width + 'px';
+            bookEl.style.height = height + 'px';
+
+            return { width, height };
+        }
+
+        function resetFlipbook() {
+            if ($bookEl && $bookEl.turn) {
+                const size = calculateSize();
+                $bookEl.turn('size', size.width, size.height);
+                $bookEl.turn('page', 1);
+                updatePageIndicator(1);
+                updateButtons(1);
+            }
+        }
+
+        function updatePageIndicator(page) {
+            document.getElementById('currentPage').textContent = page || 1;
+        }
+
+        function updateButtons(page) {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            prevBtn.disabled = page <= 1;
+            nextBtn.disabled = page >= totalPages;
+        }
+
+        // Button handlers
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if ($bookEl && $bookEl.turn) $bookEl.turn('previous');
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if ($bookEl && $bookEl.turn) $bookEl.turn('next');
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('flipbookModal');
+            if (modal.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    if ($bookEl && $bookEl.turn) $bookEl.turn('previous');
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    if ($bookEl && $bookEl.turn) $bookEl.turn('next');
+                } else if (e.key === 'Escape') {
+                    closeFlipbook();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
