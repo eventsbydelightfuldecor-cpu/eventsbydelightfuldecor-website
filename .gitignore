@@ -29,16 +29,7 @@ Thumbs.db
 *.tmp
 *.temp
 
-# Large video and image files (too big for GitHub - need compression)
-videos/Hero_Video_2.mp4
-
-# Large images that need compression
-images/Corporate/service-wedding.jpg
-images/Corporate/quick-link-contact.jpg
-images/Corporate/gallery-corprate-4.jpg
-images/Corporate/gallery-wedding-3.jpg
-images/Corporate/gallery-wedding-1.jpg
-images/Private Party/testimonial-featured.jpg
-images/Private Party/gallery-private_party10.jpg.jpg
-images/Private Party/gallery-wedding-2.jpg
+# Backup files
+videos/Hero_Video_2_original.mp4
+images_backup/
 
