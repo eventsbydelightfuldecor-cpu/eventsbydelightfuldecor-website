@@ -7,33 +7,38 @@ content:
     label: Home
     type: file
     path: index.html
+    format: raw
     fields:
-      - { name: body, label: Page Content, type: rich-text }
+      - { name: body, label: Page Content, type: code, options: { language: html } }
 
   - name: services
     label: Services
     type: file
     path: services.html
+    format: raw
     fields:
-      - { name: body, label: Page Content, type: rich-text }
+      - { name: body, label: Page Content, type: code, options: { language: html } }
 
   - name: gallery
     label: Gallery
     type: file
     path: gallery.html
+    format: raw
     fields:
-      - { name: body, label: Page Content, type: rich-text }
+      - { name: body, label: Page Content, type: code, options: { language: html } }
 
   - name: testimonials
     label: Testimonials
     type: file
     path: testimonials.html
+    format: raw
     fields:
-      - { name: body, label: Page Content, type: rich-text }
+      - { name: body, label: Page Content, type: code, options: { language: html } }
 
   - name: contact
     label: Contact
     type: file
     path: contact.html
+    format: raw
     fields:
-      - { name: body, label: Page Content, type: rich-text }
+      - { name: body, label: Page Content, type: code, options: { language: html } }
