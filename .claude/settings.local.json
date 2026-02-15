@@ -4,7 +4,10 @@
       "WebSearch",
       "WebFetch(domain:pagescms.org)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:css-tricks.com)"
+      "WebFetch(domain:css-tricks.com)",
+      "Bash(git push:*)",
+      "Bash(gh auth status:*)",
+      "Bash(ssh:*)"
     ]
   }
 }
