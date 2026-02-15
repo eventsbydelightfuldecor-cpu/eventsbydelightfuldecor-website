@@ -1,194 +1,178 @@
----
-layout: default
-title: "Events by Delightful Decor | Home"
-nav_active: home
----
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-video-container">
-      <video id="hero-video" autoplay loop muted playsinline preload="metadata">
-        <source src="videos/Hero_Video_2.mov" type="video/quicktime">
-        <source src="videos/Hero_Video_2.mov" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div id="video-fallback" style="display: none;">
-        <img src="images/welcome_pic.png" alt="Events by Delightful Decor">
-      </div>
-      <div id="video-loading" style="display: flex; justify-content: center; align-items: center; height: 300px; color: var(--primary-color);">
-        <p>Loading video...</p>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events By Delightful Decor - Boston Wedding & Event Planning</title>
+    <meta name="description" content="Boston's premier luxury event and wedding planning service. Creating unforgettable experiences with meticulous attention to detail.">
+    <meta name="keywords" content="Boston wedding planner, luxury event planning, corporate events, private parties, wedding coordinator, event design, Boston events">
+    <meta name="author" content="Events By Delightful Decor">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Events By Delightful Decor - Boston Wedding & Event Planning">
+    <meta property="og:description" content="Boston's premier luxury event and wedding planning service. Creating unforgettable experiences with meticulous attention to detail.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eventsbydelightfuldecor.com">
+    <meta property="og:image" content="https://eventsbydelightfuldecor.com/images/section_background.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Events By Delightful Decor - Boston Wedding & Event Planning">
+    <meta name="twitter:description" content="Boston's premier luxury event and wedding planning service. Creating unforgettable experiences with meticulous attention to detail.">
+    <meta name="twitter:image" content="https://eventsbydelightfuldecor.com/images/section_background.jpg">
+    <link rel="canonical" href="https://eventsbydelightfuldecor.com/">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Events By Delightful Decor",
+        "description": "Boston's premier luxury event and wedding planning service",
+        "url": "https://eventsbydelightfuldecor.com",
+        "logo": "https://eventsbydelightfuldecor.com/images/Events_By_Delightful_Decor.svg",
+        "image": "https://eventsbydelightfuldecor.com/images/section_background.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Boston",
+            "addressRegion": "MA",
+            "addressCountry": "US"
+        },
+        "serviceType": ["Wedding Planning", "Event Planning", "Corporate Events", "Private Parties"],
+        "areaServed": {
+            "@type": "City",
+            "name": "Boston",
+            "containedIn": {
+                "@type": "State",
+                "name": "Massachusetts"
+            }
+        },
+        "sameAs": [
+            "https://www.instagram.com/eventsbydelightfuldecor",
+            "https://www.facebook.com/Eventsbydelightfuldecor",
+            "https://www.tiktok.com/@eventsbydelightfuldecor"
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Preload critical resources for faster loading -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/components.js?v=2.0" as="script">
+    <link rel="preload" href="js/scripts.js?v=2.0" as="script">
+    <link rel="preload" href="videos/Hero_Video_2.mp4" as="video">
+    <link rel="preload" href="images/wedding_img/c_wedding_3.jpg" as="image">
+    <link rel="preload" href="images/wedding_img/quick-link-gallery.jpg" as="image">
+    <link rel="preload" href="images/wedding_img/quick-link-testimonials.jpg" as="image">
+    <link rel="preload" href="images/Corporate/quick-link-contact.jpg" as="image">
+
+    <!-- Prefetch next likely pages -->
+    <link rel="prefetch" href="pages/services.html">
+    <link rel="prefetch" href="pages/gallery.html">
+    <link rel="prefetch" href="pages/contact.html">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-container">
+            <img src="images/Champange_Tower.gif" alt="Loading..." class="loading-gif">
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+        </div>
     </div>
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <h1>Creating Unforgettable Events</h1>
-        <p class="hero-subtitle">Luxury event planning that brings your vision to life with elegance and precision</p>
-        <div class="hero-buttons">
-          <a href="services.html" class="btn btn-primary">Our Services</a>
-          <a href="contact.html" class="btn btn-secondary">Get Started</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Welcome Section -->
-  <div class="editorial-container">
-    <section id="welcome">
-      <h2>Welcome to Events by Delightful Decor</h2>
-      <div class="row">
-        <div class="column">
-          <div class="welcome-content">
-            <h3>Your Vision, Our Expertise</h3>
-            <p>Welcome to Events By Delightful Decor, where we specialize in creating unforgettable luxury events that will leave a lasting impression on you and your guests. Our team of experienced event planners work closely with you to understand your vision and bring it to life with meticulous attention to details and flawless execution.</p>
-            <p>From weddings to corporate events, our goal is to exceed your expectations and deliver an exceptional experience that is both elegant and inviting. We believe that every event is a celebration of life, and we are honored to be a part of yours.</p>
-            <div class="welcome-features">
-              <div class="feature">
-                <i class="fas fa-heart"></i>
-                <span>Personalized Service</span>
-              </div>
-              <div class="feature">
-                <i class="fas fa-star"></i>
-                <span>Luxury Events</span>
-              </div>
-              <div class="feature">
-                <i class="fas fa-calendar-check"></i>
-                <span>Flawless Execution</span>
-              </div>
-            </div>
-            <a href="services.html" class="btn">Discover Our Services</a>
-          </div>
-        </div>
-        <div class="column">
-          <div class="welcome-image">
-            <img src="images/welcome_pic.png" alt="Elegant floral centerpiece">
-            <div class="image-overlay">
-              <div class="overlay-content">
-                <h4>5+ Years Experience</h4>
-                <p>Creating memorable events</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
 
-  <!-- Three-Column Services & Gallery Section -->
-  <div class="editorial-container">
-    <section id="services-gallery">
-      <h2>Our Services</h2>
-      <div class="three-column">
-        <div class="column">
-          <div class="editorial-content">
-            <h3>1. Wedding Planning</h3>
-            <p>Our comprehensive wedding planning services ensure every detail is perfect for your special day. From intimate ceremonies to grand celebrations, we bring your vision to life.</p>
-            <p>We work closely with you to understand your style, preferences, and budget to create a truly personalized experience.</p>
-            <a href="services.html" class="btn">Learn More</a>
-          </div>
-        </div>
-        <div class="column">
-          <div class="editorial-content">
-            <img src="https://picsum.photos/400/300?random=71" alt="Elegant floral arrangement">
-            <h3>2. View Our Gallery</h3>
-            <p>Get a behind&#8209;the&#8209;scenes look into the past events we have created for our clients. Our pictures showcase the attention to detail and passion we put into every event we plan.</p>
-            <p>We believe a picture is worth a thousand words, so take a look and let us show you what we can do.</p>
-            <a href="gallery.html" class="btn">View Our Work</a>
-          </div>
-        </div>
-        <div class="column">
-          <div class="editorial-content">
-            <h3>3. Client Testimonials</h3>
-            <div class="testimonial-preview">
-              <img src="https://picsum.photos/200/200?random=13" alt="Happy bride and guests">
-              <div class="testimonial-content">
-                <h4>Nathaly</h4>
-                <p>"Events by Delightful Decor was one of the best decisions I made for my wedding planner! You did an amazing job!"</p>
-              </div>
-            </div>
-            <a href="testimonials.html" class="btn">Read More</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+    <!-- Main Content (hidden until loaded) -->
+    <div id="main-content-wrapper" style="opacity: 0; transition: opacity 0.8s ease-in;">
+        <!-- Skip to main content link for accessibility -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Professional Testimonials Section -->
-  <div class="editorial-container">
-    <section id="professional-testimonials">
-      <h2>What Our Clients Say</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p>"Events by Delightful Decor exceeded all our expectations. They turned our wedding into a magical day that we'll never forget. Every detail was perfect!"</p>
-            <div class="testimonial-author">
-              <img src="https://picsum.photos/60/60?random=20" alt="Sarah Johnson">
-              <div class="author-info">
-                <h4>Sarah Johnson</h4>
-                <span>Bride, 2024</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p>"Professional, creative, and absolutely amazing to work with. They made our corporate event seamless and memorable for all our guests."</p>
-            <div class="testimonial-author">
-              <img src="https://picsum.photos/60/60?random=21" alt="Michael Chen">
-              <div class="author-info">
-                <h4>Michael Chen</h4>
-                <span>Corporate Client</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <p>"From the initial consultation to the final cleanup, everything was handled with such care and attention to detail. Highly recommended!"</p>
-            <div class="testimonial-author">
-              <img src="https://picsum.photos/60/60?random=22" alt="Emily Rodriguez">
-              <div class="author-info">
-                <h4>Emily Rodriguez</h4>
-                <span>Anniversary Party</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonials-cta">
-        <a href="testimonials.html" class="btn">Read More Testimonials</a>
-      </div>
-    </section>
-  </div>
+        <!-- Header Placeholder -->
+        <div id="header-placeholder"></div>
 
-  <!-- Call to Action Section -->
-  <div class="editorial-container">
-    <section id="cta-section">
-      <div class="cta-content">
-        <h2>Ready to Create Your Perfect Event?</h2>
-        <p>Let's discuss your vision and bring your dream event to life with our expert planning services.</p>
-        <div class="cta-buttons">
-          <a href="contact.html" class="btn btn-primary">Start Planning</a>
-          <a href="gallery.html" class="btn btn-secondary">View Our Work</a>
+    <!-- Hero Section with Video Background -->
+    <section id="home" class="hero" role="banner" aria-label="Hero section with video background">
+        <div class="hero-video-container">
+            <video class="hero-video" muted loop playsinline preload="auto" poster="images/section_background.jpg" aria-label="Background video showcasing luxury events">
+                <source src="videos/Hero_Video_2.mp4" type="video/mp4">
+                <!-- Fallback: The video will be replaced with background gradient if not supported -->
+            </video>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-video-loading" aria-live="polite" aria-label="Loading video content">
+                <div class="video-loading-spinner" aria-hidden="true"></div>
+                <div class="video-loading-text">Loading video...</div>
+            </div>
         </div>
-      </div>
     </section>
-  </div>
+
+    <!-- Welcome Section -->
+    <section id="main-content" class="welcome" role="main" aria-labelledby="welcome-title">
+        <div class="welcome-background">
+            <img src="images/section_background.jpg" alt="Elegant event setup with floral arrangements and luxury decor" class="welcome-bg-image">
+        </div>
+        <div class="welcome-overlay" aria-hidden="true"></div>
+        <div class="container">
+            <div class="welcome-content">
+                <div class="welcome-text-container">
+                    <h1 id="welcome-title" class="welcome-title">Welcome</h1>
+                    <div class="welcome-text-box">
+                        <p class="welcome-description">
+                            Planning a luxury event requires meticulous attention to detail and a keen eye for elegance. From selecting opulent venues to curating exquisite menus, every aspect must reflect sophistication and exclusivity. Whether it's a lavish wedding, a corporate gala, or a private celebration, the experience should be seamless and unforgettable. By collaborating with top-tier vendors and incorporating personalized touches, you can ensure that your event not only meets but exceeds your expectations. With a focus on creating memorable moments, luxury event planning transforms your vision into a stunning reality.
+                        </p>
+                        <a href="pages/services.html" class="cta-button" aria-label="Learn more about our event planning services">See Our Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links" role="navigation" aria-labelledby="quick-links-title">
+        <div class="container">
+            <h2 id="quick-links-title" class="section-title">Explore Our Services</h2>
+            <div class="quick-links-grid" role="list">
+                <a href="pages/gallery.html" class="quick-link-card" role="listitem" aria-label="View our event gallery and portfolio">
+                    <div class="quick-link-image">
+                        <div class="quick-link-placeholder">
+                            <img src="images/wedding_img/gallery-wedding-5.jpg" alt="Beautiful wedding ceremony setup showcasing our event planning expertise">
+                        </div>
+                    </div>
+                    <h3>Gallery</h3>
+                    <p>View our stunning event portfolio</p>
+                </a>
+
+                <a href="pages/testimonials.html" class="quick-link-card" role="listitem" aria-label="Read client testimonials and reviews">
+                    <div class="quick-link-image">
+                        <div class="quick-link-placeholder">
+                            <img src="images/Private Party/testimonial-featured.jpg" alt="Happy client testimonial photo">
+                        </div>
+                    </div>
+                    <h3>Testimonials</h3>
+                    <p>Read what our clients say</p>
+                </a>
+
+                <a href="pages/contact.html" class="quick-link-card" role="listitem" aria-label="Contact us to start planning your event">
+                    <div class="quick-link-image">
+                        <div class="quick-link-placeholder">
+                            <img src="images/Private Party/contact_us.jpg" alt="Contact us for event planning consultation">
+                        </div>
+                    </div>
+                    <h3>Contact Us</h3>
+                    <p>Start planning your event today</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    </div> <!-- End main-content-wrapper -->
+
+    <script src="js/components.js?v=2.0"></script>
+    <script src="js/scripts.js?v=2.0"></script>
+</body>
+</html>

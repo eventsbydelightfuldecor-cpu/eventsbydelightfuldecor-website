@@ -7,69 +7,62 @@ content:
     label: Home
     type: file
     path: index.html
+    format: raw
     fields:
-      - { name: title, label: Page Title, type: string }
-      - { name: body, label: Page Content, type: rich-text }
+      - { name: body, label: Page Content, type: code, options: { language: html } }
 
   - name: services
     label: Services
     type: file
-    path: services.html
+    path: pages/services.html
+    format: raw
     fields:
-      - { name: title, label: Page Title, type: string }
-      - { name: hero_title, label: Hero Title, type: string }
-      - { name: body, label: Page Content, type: rich-text }
+      - { name: body, label: Page Content, type: code, options: { language: html } }
 
   - name: gallery
     label: Gallery
     type: file
-    path: gallery.html
+    path: pages/gallery.html
+    format: raw
     fields:
-      - { name: title, label: Page Title, type: string }
-      - { name: hero_title, label: Hero Title, type: string }
-      - { name: body, label: Page Content, type: rich-text }
+      - { name: body, label: Page Content, type: code, options: { language: html } }
 
   - name: testimonials
     label: Testimonials
     type: file
-    path: testimonials.html
+    path: pages/testimonials.html
+    format: raw
     fields:
-      - { name: title, label: Page Title, type: string }
-      - { name: hero_title, label: Hero Title, type: string }
-      - { name: body, label: Page Content, type: rich-text }
+      - { name: body, label: Page Content, type: code, options: { language: html } }
 
   - name: contact
     label: Contact
     type: file
-    path: contact.html
+    path: pages/contact.html
+    format: raw
     fields:
-      - { name: title, label: Page Title, type: string }
-      - { name: hero_title, label: Hero Title, type: string }
-      - { name: body, label: Page Content, type: rich-text }
+      - { name: body, label: Page Content, type: code, options: { language: html } }
 
   - name: about
     label: About
     type: file
-    path: about.html
+    path: pages/about.html
+    format: raw
     fields:
-      - { name: title, label: Page Title, type: string }
-      - { name: hero_title, label: Hero Title, type: string }
-      - { name: body, label: Page Content, type: rich-text }
+      - { name: body, label: Page Content, type: code, options: { language: html } }
 
   - name: give-a-gift
     label: Give-A-Gift
     type: file
-    path: give-a-gift.html
+    path: pages/give-a-gift.html
+    format: raw
     fields:
-      - { name: title, label: Page Title, type: string }
-      - { name: hero_title, label: Hero Title, type: string }
-      - { name: body, label: Page Content, type: rich-text }
+      - { name: body, label: Page Content, type: code, options: { language: html } }
 
   - name: faq
     label: FAQ
     type: file
-    path: faq.html
+    path: pages/faq.html
+    format: raw
     fields:
-      - { name: title, label: Page Title, type: string }
-      - { name: hero_title, label: Hero Title, type: string }
-      - { name: body, label: Page Content, type: rich-text }
+      - { name: body, label: Page Content, type: code, options: { language: html } }
