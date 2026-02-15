@@ -1,0 +1,19 @@
+content:
+  - name: pages
+    label: Pages
+    type: collection
+    path: /
+    filename: "{fields.path}"
+    fields:
+      - name: path
+        label: File
+        type: select
+        options:
+          - index.html
+          - services.html
+          - gallery.html
+          - testimonials.html
+          - contact.html
+      - name: body
+        label: Page Content
+        type: rich-text
