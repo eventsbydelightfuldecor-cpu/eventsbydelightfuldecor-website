@@ -1,36 +1,39 @@
-# .pagescms/config.yml
-
-# Basic Site Settings
-site_url: "https://eventsbydelightfuldecor.com/"
-
-# Content Structure
-content:
-  - name: Pages
-    label: Website Pages
-    type: collection
-    path: content/pages # Adjust this to where your HTML/Markdown files live
-    format: html
-    fields:
-      - name: title
-        label: Page Title
-        type: string
-      - name: body
-        label: Content
-        type: rich-text
-
-  - name: Gallery
-    label: Event Gallery
-    type: collection
-    path: assets/images/gallery
-    fields:
-      - name: image
-        label: Event Photo
-        type: image
-      - name: caption
-        label: Event Description
-        type: string
-
-# Media Settings
 media:
-  input: assets/images
-  output: /assets/images
+  input: images
+  output: /images
+
+content:
+  - name: homepage
+    label: Home
+    type: file
+    path: index.html
+    fields:
+      - { name: body, label: Page Content, type: rich-text }
+
+  - name: services
+    label: Services
+    type: file
+    path: services.html
+    fields:
+      - { name: body, label: Page Content, type: rich-text }
+
+  - name: gallery
+    label: Gallery
+    type: file
+    path: gallery.html
+    fields:
+      - { name: body, label: Page Content, type: rich-text }
+
+  - name: testimonials
+    label: Testimonials
+    type: file
+    path: testimonials.html
+    fields:
+      - { name: body, label: Page Content, type: rich-text }
+
+  - name: contact
+    label: Contact
+    type: file
+    path: contact.html
+    fields:
+      - { name: body, label: Page Content, type: rich-text }
