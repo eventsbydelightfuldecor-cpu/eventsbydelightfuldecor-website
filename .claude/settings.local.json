@@ -7,7 +7,14 @@
       "WebFetch(domain:css-tricks.com)",
       "Bash(git push:*)",
       "Bash(gh auth status:*)",
-      "Bash(ssh:*)"
+      "Bash(ssh:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(git checkout:*)",
+      "Bash(git -C /Users/jgustavo/Downloads/eventsbydelightful status)",
+      "Bash(git -C /Users/jgustavo/Downloads/eventsbydelightful diff --stat)",
+      "Bash(git -C /Users/jgustavo/Downloads/eventsbydelightful log --oneline -5)",
+      "Bash(git -C /Users/jgustavo/Downloads/eventsbydelightful add .pages.yml index.html _config.yml _layouts/default.html about.html contact.html faq.html gallery.html give-a-gift.html services.html style.css testimonials.html eventsbydelightful.Rproj)",
+      "Bash(git -C:*)"
     ]
   }
 }
