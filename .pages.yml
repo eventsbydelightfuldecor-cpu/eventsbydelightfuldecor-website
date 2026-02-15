@@ -1,0 +1,75 @@
+media:
+  input: images
+  output: /images
+
+content:
+  - name: homepage
+    label: Home
+    type: file
+    path: index.html
+    fields:
+      - { name: title, label: Page Title, type: string }
+      - { name: body, label: Page Content, type: rich-text }
+
+  - name: services
+    label: Services
+    type: file
+    path: services.html
+    fields:
+      - { name: title, label: Page Title, type: string }
+      - { name: hero_title, label: Hero Title, type: string }
+      - { name: body, label: Page Content, type: rich-text }
+
+  - name: gallery
+    label: Gallery
+    type: file
+    path: gallery.html
+    fields:
+      - { name: title, label: Page Title, type: string }
+      - { name: hero_title, label: Hero Title, type: string }
+      - { name: body, label: Page Content, type: rich-text }
+
+  - name: testimonials
+    label: Testimonials
+    type: file
+    path: testimonials.html
+    fields:
+      - { name: title, label: Page Title, type: string }
+      - { name: hero_title, label: Hero Title, type: string }
+      - { name: body, label: Page Content, type: rich-text }
+
+  - name: contact
+    label: Contact
+    type: file
+    path: contact.html
+    fields:
+      - { name: title, label: Page Title, type: string }
+      - { name: hero_title, label: Hero Title, type: string }
+      - { name: body, label: Page Content, type: rich-text }
+
+  - name: about
+    label: About
+    type: file
+    path: about.html
+    fields:
+      - { name: title, label: Page Title, type: string }
+      - { name: hero_title, label: Hero Title, type: string }
+      - { name: body, label: Page Content, type: rich-text }
+
+  - name: give-a-gift
+    label: Give-A-Gift
+    type: file
+    path: give-a-gift.html
+    fields:
+      - { name: title, label: Page Title, type: string }
+      - { name: hero_title, label: Hero Title, type: string }
+      - { name: body, label: Page Content, type: rich-text }
+
+  - name: faq
+    label: FAQ
+    type: file
+    path: faq.html
+    fields:
+      - { name: title, label: Page Title, type: string }
+      - { name: hero_title, label: Hero Title, type: string }
+      - { name: body, label: Page Content, type: rich-text }

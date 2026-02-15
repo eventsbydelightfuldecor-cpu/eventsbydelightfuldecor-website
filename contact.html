@@ -1,0 +1,65 @@
+---
+layout: default
+title: "Events by Delightful Decor | Contact"
+hero_title: "Contact Us"
+nav_active: contact
+---
+  <div class="editorial-container">
+    <section>
+      <p style="max-width:700px;margin:0 auto 2rem;">Are you ready to embark on your dreams? Contact us and a member of our team will get back to you within 1&#8209;2 business days to schedule a 1&#8209;on&#8209;1 consultation.</p>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! We will be in touch soon.');">
+        <div class="row">
+          <div class="column">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required>
+          </div>
+          <div class="column">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="column">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+        </div>
+        <label for="event-type">Event Type</label>
+        <select id="event-type" name="event-type">
+          <option value="">Choose an option</option>
+          <option value="wedding">Wedding</option>
+          <option value="corporate">Corporate Event</option>
+          <option value="birthday">Birthday</option>
+          <option value="other">Other</option>
+        </select>
+        <div class="row">
+          <div class="column">
+            <p><strong>Event Budget</strong></p>
+            <div class="radio-group">
+              <label><input type="radio" name="budget" value="1000-5000"> $1,000–$5,000</label>
+              <label><input type="radio" name="budget" value="5001-10000"> $5,001–$10,000</label>
+              <label><input type="radio" name="budget" value="10000-25000"> $10,000–$25,000</label>
+              <label><input type="radio" name="budget" value="25001-up"> $25,001 and up</label>
+            </div>
+          </div>
+          <div class="column">
+            <p><strong>Give&#8209;A&#8209;Gift</strong></p>
+            <div class="radio-group">
+              <label><input type="radio" name="gift" value="15"> $15</label>
+              <label><input type="radio" name="gift" value="25"> $25</label>
+              <label><input type="radio" name="gift" value="50"> $50</label>
+              <label><input type="radio" name="gift" value="100"> $100</label>
+              <label><input type="radio" name="gift" value="more"> Give More</label>
+            </div>
+          </div>
+        </div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us about your event..."></textarea>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </section>
+  </div>
