@@ -1,0 +1,17 @@
+-var pages = [
+  'turn-js-flipbook-2-1/Wedding Mag/Front cover page.jpg',
+  'turn-js-flipbook-2-1/Wedding Mag/Page_1.jpg',
+  'turn-js-flipbook-2-1/Wedding Mag/Page_2.jpg',
+  'turn-js-flipbook-2-1/Wedding Mag/Page_3.jpg',
+  'turn-js-flipbook-2-1/Wedding Mag/Page_4.jpg',
+  'turn-js-flipbook-2-1/Wedding Mag/Page_5.jpg',
+  'turn-js-flipbook-2-1/Wedding Mag/Back_Cover.jpg'
+];
+
+
+.book-wrapper
+  .book-container
+    #book.book
+      each page in pages
+        .page
+          img(src=page, alt='')

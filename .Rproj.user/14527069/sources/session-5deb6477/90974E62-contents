@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quick FlipBook Demo</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="flipbook-container"></div>
+
+  <!-- Use module scripts for Three.js and quick_flipbook -->
+  <script type="module">
+    import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js';
+    // The ESM build of quick_flipbook exports the FlipBook class
+    import { FlipBook } from 'https://cdn.jsdelivr.net/npm/quick_flipbook@1.1.3/dist/flipbook.mjs';
+
+    // Create a basic Three.js setup
+    const container = document.getElementById('flipbook-container');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      600 / 400,     // aspect ratio (width / height)
+      0.1,
+      1000
+    );
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(600, 400);
+    container.appendChild(renderer.domElement);
+
+    // Position the camera
+    camera.position.z = 5;
+
+    // Create the flipbook with options recommended in the README:contentReference[oaicite:1]{index=1}.
+    const book = new FlipBook({
+      flipDuration: 0.5,   // seconds it takes to flip one page:contentReference[oaicite:2]{index=2}.
+      yBetweenPages: 0.001, // spacing between stacked pages:contentReference[oaicite:3]{index=3}.
+      pageSubdivisions: 20  // subdivisions for smoother page bend:contentReference[oaicite:4]{index=4}.
+    });
+    book.scale.x = 0.8;    // adjust aspect ratio to match 600x400 pages:contentReference[oaicite:5]{index=5}.
+    scene.add(book);
+
+    // Define the pages.  Empty strings produce blank pages:contentReference[oaicite:6]{index=6}.
+    book.setPages([
+      'https://placehold.co/600x400?text=Cover+page',
+      'https://placehold.co/600x400?text=Backside+of+cover',
+      '',   // blank page
+      '',   // blank page
+      'https://placehold.co/600x400?text=Last+page',
+      'https://placehold.co/600x400?text=Back+side'
+    ]);
+
+    // Animation loop to drive the FlipBook’s internal animation:contentReference[oaicite:7]{index=7}.
+    const clock = new THREE.Clock();
+    function animate() {
+      requestAnimationFrame(animate);
+      const delta = clock.getDelta();
+      book.animate(delta);   // animate the page flip:contentReference[oaicite:8]{index=8}.
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // Click to go to the next page
+    container.addEventListener('click', () => book.nextPage());
+  </script>
+</body>
+</html>
+
