@@ -29,7 +29,18 @@ Thumbs.db
 *.tmp
 *.temp
 
+# R project files
+.Rhistory
+.Rproj.user/
+
+# Claude
+.claude/
+
 # Backup files
 videos/Hero_Video_2_original.mp4
 images_backup/
+
+# Generated files
+generate_guide.py
+*.pdf
 
