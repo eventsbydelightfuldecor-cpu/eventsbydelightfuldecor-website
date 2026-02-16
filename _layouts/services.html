@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<div id="main-content-wrapper">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/services.html' | relative_url }}" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/about.html' | relative_url }}" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/testimonials.html' | relative_url }}" class="nav-link">Testimonials</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/gallery.html' | relative_url }}" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/contact.html' | relative_url }}" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/give-a-gift.html' | relative_url }}" class="nav-link">Give-A-Gift</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/faq.html' | relative_url }}" class="nav-link">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">{{ page.page_title }}</h1>
+            <p class="page-subtitle">{{ page.page_subtitle }}</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="services-grid">
+                {% for service in page.services %}
+                <div class="service-card">
+                    <div class="service-image-placeholder">
+                        <img src="{{ service.image | relative_url }}" alt="{{ service.title }}">
+                    </div>
+                    <h3>{{ service.title }}</h3>
+                    <p>{{ service.description }}</p>
+                    <ul class="service-features">
+                        {% for feature in service.features %}
+                        <li>{{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">{{ page.cta_title }}</h2>
+            <p class="cta-description">{{ page.cta_description }}</p>
+            <a href="{{ page.cta_button_link }}" class="cta-button">{{ page.cta_button_text }}</a>
+        </div>
+    </section>

@@ -1,0 +1,119 @@
+---
+layout: default
+---
+
+<div id="main-content-wrapper">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/services.html' | relative_url }}" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/about.html' | relative_url }}" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/testimonials.html' | relative_url }}" class="nav-link">Testimonials</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/gallery.html' | relative_url }}" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/contact.html' | relative_url }}" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/give-a-gift.html' | relative_url }}" class="nav-link">Give-A-Gift</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/faq.html' | relative_url }}" class="nav-link">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">{{ page.page_title }}</h1>
+            <p class="page-subtitle">{{ page.page_subtitle }}</p>
+        </div>
+    </section>
+
+    <!-- Gift Options -->
+    <section class="give-a-gift">
+        <div class="container">
+            <div class="gift-options">
+                {% for gift in page.gifts %}
+                <div class="gift-card{% if gift.featured %} featured{% endif %}">
+                    {% if gift.featured %}
+                    <div class="gift-ribbon">{{ gift.ribbon_text | default: "Most Popular" }}</div>
+                    {% endif %}
+                    <div class="gift-icon">
+                        <i class="fas fa-{{ gift.icon }}"></i>
+                    </div>
+                    <h3>{{ gift.title }}</h3>
+                    <p class="gift-price">{{ gift.price }}</p>
+                    <p class="gift-description">{{ gift.description }}</p>
+                    <ul class="gift-features">
+                        {% for feature in gift.features %}
+                        <li>{{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                    <a href="{{ gift.button_link | default: 'contact.html' }}" class="gift-button">{{ gift.button_text | default: "Purchase" }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">{{ page.steps_heading | default: "How It Works" }}</h2>
+            <div class="steps-grid">
+                {% for step in page.steps %}
+                <div class="step">
+                    <div class="step-number">{{ step.number }}</div>
+                    <h3>{{ step.title }}</h3>
+                    <p>{{ step.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Perfect For -->
+    <section class="perfect-for">
+        <div class="container">
+            <h2 class="section-title">{{ page.occasions_heading | default: "Perfect Gift For" }}</h2>
+            <div class="occasions-grid">
+                {% for occasion in page.occasions %}
+                <div class="occasion-card">
+                    <i class="fas fa-{{ occasion.icon }}"></i>
+                    <h3>{{ occasion.title }}</h3>
+                    <p>{{ occasion.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    {% if page.testimonial_quote %}
+    <section class="gift-testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <p class="testimonial-text">
+                    "{{ page.testimonial_quote }}"
+                </p>
+                <p class="testimonial-author">- {{ page.testimonial_author }}</p>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">{{ page.cta_title }}</h2>
+            <p class="cta-description">{{ page.cta_description }}</p>
+            <a href="{{ page.cta_button_link }}" class="cta-button">{{ page.cta_button_text }}</a>
+        </div>
+    </section>

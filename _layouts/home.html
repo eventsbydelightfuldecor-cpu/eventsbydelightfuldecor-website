@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+<!-- Loading Screen -->
+<div id="loading-screen" class="loading-screen">
+    <div class="loading-container">
+        <img src="{{ '/images/Champange_Tower.gif' | relative_url }}" alt="Loading..." class="loading-gif">
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content (hidden until loaded) -->
+<div id="main-content-wrapper" style="opacity: 0; transition: opacity 0.8s ease-in;">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/services.html' | relative_url }}" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/about.html' | relative_url }}" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/testimonials.html' | relative_url }}" class="nav-link">Testimonials</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/gallery.html' | relative_url }}" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/contact.html' | relative_url }}" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/give-a-gift.html' | relative_url }}" class="nav-link">Give-A-Gift</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/faq.html' | relative_url }}" class="nav-link">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Video Background -->
+    <section id="home" class="hero" role="banner" aria-label="Hero section with video background">
+        <div class="hero-video-container">
+            <video class="hero-video" muted loop playsinline preload="auto" poster="{{ page.hero_poster | relative_url }}" aria-label="Background video showcasing luxury events">
+                <source src="{{ page.hero_video | relative_url }}" type="video/mp4">
+            </video>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-video-loading" aria-live="polite" aria-label="Loading video content">
+                <div class="video-loading-spinner" aria-hidden="true"></div>
+                <div class="video-loading-text">{{ page.hero_loading_text | default: "Loading video..." }}</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="main-content" class="welcome" role="main" aria-labelledby="welcome-title">
+        <div class="welcome-background">
+            <img src="{{ page.welcome_background | relative_url }}" alt="Elegant event setup with floral arrangements and luxury decor" class="welcome-bg-image">
+        </div>
+        <div class="welcome-overlay" aria-hidden="true"></div>
+        <div class="container">
+            <div class="welcome-content">
+                <div class="welcome-text-container">
+                    <h1 id="welcome-title" class="welcome-title">{{ page.welcome_title }}</h1>
+                    <div class="welcome-text-box">
+                        <p class="welcome-description">
+                            {{ page.welcome_description }}
+                        </p>
+                        <a href="{{ page.welcome_cta_link }}" class="cta-button" aria-label="{{ page.welcome_cta_aria | default: 'Learn more about our event planning services' }}">{{ page.welcome_cta_text }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links" role="navigation" aria-labelledby="quick-links-title">
+        <div class="container">
+            <h2 id="quick-links-title" class="section-title">{{ page.quick_links_title | default: "Explore Our Services" }}</h2>
+            <div class="quick-links-grid" role="list">
+                {% for link in page.quick_links %}
+                <a href="{{ link.url }}" class="quick-link-card" role="listitem" aria-label="{{ link.aria_label }}">
+                    <div class="quick-link-image">
+                        <div class="quick-link-placeholder">
+                            <img src="{{ link.image | relative_url }}" alt="{{ link.alt }}">
+                        </div>
+                    </div>
+                    <h3>{{ link.title }}</h3>
+                    <p>{{ link.description }}</p>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>

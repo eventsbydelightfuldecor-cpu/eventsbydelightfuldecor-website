@@ -1,0 +1,108 @@
+---
+layout: default
+---
+
+<div id="main-content-wrapper">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/services.html' | relative_url }}" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/about.html' | relative_url }}" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/testimonials.html' | relative_url }}" class="nav-link">Testimonials</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/gallery.html' | relative_url }}" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/contact.html' | relative_url }}" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/give-a-gift.html' | relative_url }}" class="nav-link">Give-A-Gift</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/faq.html' | relative_url }}" class="nav-link">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">{{ page.page_title }}</h1>
+            <p class="page-subtitle">{{ page.page_subtitle }}</p>
+        </div>
+    </section>
+
+    <!-- FAQ Categories -->
+    <section class="faq-categories">
+        <div class="container">
+            <div class="category-tabs">
+                {% for category in page.faq_categories %}
+                <button class="tab-btn{% if forloop.first %} active{% endif %}" data-category="{{ category.slug }}">{{ category.name }}</button>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            {% for category in page.faq_categories %}
+            <div class="faq-category{% if forloop.first %} active{% endif %}" data-category="{{ category.slug }}">
+                <div class="faq-list">
+                    {% for item in page.faq_items %}
+                    {% if item.category == category.slug %}
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>{{ item.question }}</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>{{ item.answer }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Still Have Questions -->
+    <section class="contact-cta">
+        <div class="container">
+            <h2 class="section-title">{{ page.contact_heading | default: "Still Have Questions?" }}</h2>
+            <p class="section-subtitle">{{ page.contact_subheading }}</p>
+            <div class="contact-options">
+                {% for option in page.contact_options %}
+                <a href="{{ option.link }}" class="contact-option">
+                    <i class="fas fa-{{ option.icon }}"></i>
+                    <h3>{{ option.title }}</h3>
+                    <p>{{ option.text }}</p>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Category Tabs
+        document.addEventListener('DOMContentLoaded', function() {
+            var tabBtns = document.querySelectorAll('.tab-btn');
+            var faqCategories = document.querySelectorAll('.faq-category');
+
+            tabBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var category = this.getAttribute('data-category');
+                    tabBtns.forEach(function(b) { b.classList.remove('active'); });
+                    faqCategories.forEach(function(c) { c.classList.remove('active'); });
+                    this.classList.add('active');
+                    document.querySelector('.faq-category[data-category="' + category + '"]').classList.add('active');
+                });
+            });
+        });
+    </script>

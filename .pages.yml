@@ -7,62 +7,259 @@ content:
     label: Home
     type: file
     path: index.html
-    format: raw
     fields:
-      - { name: body, label: Page Content, type: code, options: { language: html } }
+      - { name: welcome_title, label: Welcome Title, type: string }
+      - { name: welcome_description, label: Welcome Description, type: text }
+      - { name: welcome_cta_text, label: Button Text, type: string }
+      - { name: welcome_cta_link, label: Button Link, type: string }
+      - { name: hero_video, label: Hero Video, type: string }
+      - { name: hero_poster, label: Hero Poster Image, type: image }
+      - { name: welcome_background, label: Welcome Background Image, type: image }
+      - name: quick_links
+        label: Quick Links
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: string }
+          - { name: image, label: Image, type: image }
+          - { name: alt, label: Image Alt Text, type: string }
+          - { name: url, label: Link URL, type: string }
+          - { name: aria_label, label: Accessibility Label, type: string }
 
   - name: services
     label: Services
     type: file
     path: pages/services.html
-    format: raw
     fields:
-      - { name: body, label: Page Content, type: code, options: { language: html } }
+      - { name: page_title, label: Page Title, type: string }
+      - { name: page_subtitle, label: Page Subtitle, type: string }
+      - name: services
+        label: Service Cards
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Service Name, type: string }
+          - { name: image, label: Service Image, type: image }
+          - { name: description, label: Description, type: text }
+          - name: features
+            label: Features
+            type: string
+            list: true
+      - { name: cta_title, label: CTA Heading, type: string }
+      - { name: cta_description, label: CTA Text, type: string }
+      - { name: cta_button_text, label: CTA Button Text, type: string }
+      - { name: cta_button_link, label: CTA Button Link, type: string }
 
   - name: gallery
     label: Gallery
     type: file
     path: pages/gallery.html
-    format: raw
     fields:
-      - { name: body, label: Page Content, type: code, options: { language: html } }
+      - { name: page_title, label: Page Title, type: string }
+      - { name: page_subtitle, label: Page Subtitle, type: text }
+      - name: categories
+        label: Filter Categories
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Display Name, type: string }
+          - { name: slug, label: Slug, type: string }
+      - { name: magazine_text, label: Magazine Button Text, type: string }
+      - name: gallery_items
+        label: Gallery Images
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Image, type: image }
+          - { name: alt, label: Alt Text, type: string }
+          - { name: category, label: Category Slug, type: string }
+      - { name: cta_title, label: CTA Heading, type: string }
+      - { name: cta_description, label: CTA Text, type: string }
+      - { name: cta_button_text, label: CTA Button Text, type: string }
+      - { name: cta_button_link, label: CTA Button Link, type: string }
 
   - name: testimonials
     label: Testimonials
     type: file
     path: pages/testimonials.html
-    format: raw
     fields:
-      - { name: body, label: Page Content, type: code, options: { language: html } }
+      - { name: page_title, label: Page Title, type: string }
+      - { name: page_subtitle, label: Page Subtitle, type: string }
+      - name: featured
+        label: Featured Testimonial
+        type: object
+        fields:
+          - { name: quote, label: Quote, type: text }
+          - { name: author, label: Author Name, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: image, label: Image, type: image }
+      - name: testimonials
+        label: Testimonial Cards
+        type: object
+        list: true
+        fields:
+          - { name: quote, label: Quote, type: text }
+          - { name: author, label: Author Name, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: organization, label: Organization, type: string }
+          - { name: image, label: Author Image, type: image }
+          - { name: stars, label: Star Rating (1-5), type: number }
+      - { name: cta_title, label: CTA Heading, type: string }
+      - { name: cta_description, label: CTA Text, type: string }
+      - { name: cta_button_text, label: CTA Button Text, type: string }
+      - { name: cta_button_link, label: CTA Button Link, type: string }
 
   - name: contact
     label: Contact
     type: file
     path: pages/contact.html
-    format: raw
     fields:
-      - { name: body, label: Page Content, type: code, options: { language: html } }
+      - { name: page_title, label: Page Title, type: string }
+      - { name: page_subtitle, label: Page Subtitle, type: string }
+      - { name: contact_info_title, label: Contact Info Heading, type: string }
+      - { name: contact_intro, label: Contact Intro Text, type: text }
+      - name: contact_items
+        label: Contact Info Blocks
+        type: object
+        list: true
+        fields:
+          - { name: icon, label: Icon Name (Font Awesome), type: string }
+          - { name: title, label: Title, type: string }
+          - { name: content, label: Content (HTML allowed), type: text }
+      - { name: formspree_url, label: Formspree Action URL, type: string }
+      - { name: form_title, label: Form Heading, type: string }
+      - name: quick_links
+        label: Quick Link Cards
+        type: object
+        list: true
+        fields:
+          - { name: icon, label: Icon Name, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: string }
+          - { name: url, label: Link URL, type: string }
 
   - name: about
     label: About
     type: file
     path: pages/about.html
-    format: raw
     fields:
-      - { name: body, label: Page Content, type: code, options: { language: html } }
+      - { name: page_title, label: Page Title, type: string }
+      - { name: page_subtitle, label: Page Subtitle, type: string }
+      - { name: story_heading, label: Our Story Heading, type: string }
+      - name: story_paragraphs
+        label: Our Story Paragraphs
+        type: text
+        list: true
+      - name: story_features
+        label: Story Feature Badges
+        type: object
+        list: true
+        fields:
+          - { name: icon, label: Icon Name, type: string }
+          - { name: text, label: Text, type: string }
+      - { name: story_image, label: Story Image, type: image }
+      - { name: mission_title, label: Mission Title, type: string }
+      - { name: mission_text, label: Mission Text, type: text }
+      - name: team
+        label: Team Members
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: role, label: Role/Title, type: string }
+          - { name: image, label: Photo, type: image }
+          - { name: bio, label: Bio, type: text }
+          - name: expertise
+            label: Expertise Tags
+            type: string
+            list: true
+      - name: values
+        label: Values
+        type: object
+        list: true
+        fields:
+          - { name: icon, label: Icon Name, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
 
   - name: give-a-gift
     label: Give-A-Gift
     type: file
     path: pages/give-a-gift.html
-    format: raw
     fields:
-      - { name: body, label: Page Content, type: code, options: { language: html } }
+      - { name: page_title, label: Page Title, type: string }
+      - { name: page_subtitle, label: Page Subtitle, type: text }
+      - name: gifts
+        label: Gift Options
+        type: object
+        list: true
+        fields:
+          - { name: icon, label: Icon Name, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: price, label: Price, type: string }
+          - { name: description, label: Description, type: text }
+          - name: features
+            label: Features
+            type: string
+            list: true
+          - { name: button_text, label: Button Text, type: string }
+          - { name: button_link, label: Button Link, type: string }
+          - { name: featured, label: Featured?, type: boolean }
+          - { name: ribbon_text, label: Ribbon Text, type: string }
+      - name: steps
+        label: How It Works Steps
+        type: object
+        list: true
+        fields:
+          - { name: number, label: Step Number, type: number }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: text }
+      - name: occasions
+        label: Perfect For Occasions
+        type: object
+        list: true
+        fields:
+          - { name: icon, label: Icon Name, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: string }
+      - { name: testimonial_quote, label: Testimonial Quote, type: text }
+      - { name: testimonial_author, label: Testimonial Author, type: string }
+      - { name: cta_title, label: CTA Heading, type: string }
+      - { name: cta_description, label: CTA Text, type: string }
+      - { name: cta_button_text, label: CTA Button Text, type: string }
+      - { name: cta_button_link, label: CTA Button Link, type: string }
 
   - name: faq
     label: FAQ
     type: file
     path: pages/faq.html
-    format: raw
     fields:
-      - { name: body, label: Page Content, type: code, options: { language: html } }
+      - { name: page_title, label: Page Title, type: string }
+      - { name: page_subtitle, label: Page Subtitle, type: string }
+      - name: faq_categories
+        label: FAQ Categories
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Display Name, type: string }
+          - { name: slug, label: Slug, type: string }
+      - name: faq_items
+        label: FAQ Items
+        type: object
+        list: true
+        fields:
+          - { name: question, label: Question, type: string }
+          - { name: answer, label: Answer, type: text }
+          - { name: category, label: Category Slug, type: string }
+      - { name: contact_heading, label: Contact Section Heading, type: string }
+      - { name: contact_subheading, label: Contact Section Subheading, type: string }
+      - name: contact_options
+        label: Contact Options
+        type: object
+        list: true
+        fields:
+          - { name: icon, label: Icon Name, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: string }
+          - { name: link, label: Link URL, type: string }

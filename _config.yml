@@ -1,0 +1,9 @@
+title: Events by Delightful Decor
+exclude:
+  - node_modules
+  - package.json
+  - package-lock.json
+  - "*.md"
+  - .pages.yml
+  - Gemfile
+  - Gemfile.lock

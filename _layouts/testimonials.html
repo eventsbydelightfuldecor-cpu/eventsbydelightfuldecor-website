@@ -1,0 +1,101 @@
+---
+layout: default
+---
+
+<div id="main-content-wrapper">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/services.html' | relative_url }}" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/about.html' | relative_url }}" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/testimonials.html' | relative_url }}" class="nav-link">Testimonials</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/gallery.html' | relative_url }}" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/contact.html' | relative_url }}" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/give-a-gift.html' | relative_url }}" class="nav-link">Give-A-Gift</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/faq.html' | relative_url }}" class="nav-link">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">{{ page.page_title }}</h1>
+            <p class="page-subtitle">{{ page.page_subtitle }}</p>
+        </div>
+    </section>
+
+    <!-- Featured Testimonial -->
+    {% if page.featured %}
+    <section class="featured-testimonial">
+        <div class="container">
+            <div class="testimonials-content">
+                <div class="testimonials-text">
+                    <div class="testimonial-quote">
+                        <p class="testimonial-text">
+                            "{{ page.featured.quote }}"
+                        </p>
+                        <p class="testimonial-author">{{ page.featured.author }}</p>
+                        <p class="testimonial-role">{{ page.featured.role }}</p>
+                    </div>
+                </div>
+                <div class="testimonials-image">
+                    <img src="{{ page.featured.image | relative_url }}" alt="{{ page.featured.alt | default: page.featured.author }}">
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- All Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonials-grid">
+                {% for testimonial in page.testimonials %}
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            {% assign star_count = testimonial.stars | default: 5 %}
+                            {% for i in (1..star_count) %}
+                            <i class="fas fa-star"></i>
+                            {% endfor %}
+                        </div>
+                        <p class="testimonial-text">
+                            "{{ testimonial.quote }}"
+                        </p>
+                        <div class="testimonial-author">
+                            <img class="author-image" src="{{ testimonial.image | relative_url }}" alt="{{ testimonial.author }}">
+                            <div class="author-info">
+                                <h4>{{ testimonial.author }}</h4>
+                                <span>{{ testimonial.role }}</span>
+                                {% if testimonial.organization %}
+                                <span>{{ testimonial.organization }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">{{ page.cta_title }}</h2>
+            <p class="cta-description">{{ page.cta_description }}</p>
+            <a href="{{ page.cta_button_link }}" class="cta-button">{{ page.cta_button_text }}</a>
+        </div>
+    </section>

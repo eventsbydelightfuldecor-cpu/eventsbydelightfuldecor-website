@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    {% if page.meta_description %}<meta name="description" content="{{ page.meta_description }}">{% endif %}
+    {% if page.meta_keywords %}<meta name="keywords" content="{{ page.meta_keywords }}">{% endif %}
+    {% if page.meta_author %}<meta name="author" content="{{ page.meta_author }}">{% endif %}
+    {% if page.meta_robots %}<meta name="robots" content="{{ page.meta_robots }}">{% endif %}
+    {% if page.og_title %}<meta property="og:title" content="{{ page.og_title }}">{% endif %}
+    {% if page.og_description %}<meta property="og:description" content="{{ page.og_description }}">{% endif %}
+    {% if page.og_type %}<meta property="og:type" content="{{ page.og_type }}">{% endif %}
+    {% if page.og_url %}<meta property="og:url" content="{{ page.og_url }}">{% endif %}
+    {% if page.og_image %}<meta property="og:image" content="{{ page.og_image }}">{% endif %}
+    {% if page.og_image_width %}<meta property="og:image:width" content="{{ page.og_image_width }}">{% endif %}
+    {% if page.og_image_height %}<meta property="og:image:height" content="{{ page.og_image_height }}">{% endif %}
+    {% if page.twitter_card %}<meta name="twitter:card" content="{{ page.twitter_card }}">{% endif %}
+    {% if page.twitter_title %}<meta name="twitter:title" content="{{ page.twitter_title }}">{% endif %}
+    {% if page.twitter_description %}<meta name="twitter:description" content="{{ page.twitter_description }}">{% endif %}
+    {% if page.twitter_image %}<meta name="twitter:image" content="{{ page.twitter_image }}">{% endif %}
+    {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}">{% endif %}
+
+    {% if page.structured_data %}
+    <script type="application/ld+json">
+    {{ page.structured_data | jsonify }}
+    </script>
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    {% if page.preloads %}
+    {% for preload in page.preloads %}
+    <link rel="preload" href="{{ preload.href | relative_url }}" as="{{ preload.as }}">
+    {% endfor %}
+    {% endif %}
+
+    {% if page.prefetches %}
+    {% for prefetch in page.prefetches %}
+    <link rel="prefetch" href="{{ prefetch | relative_url }}">
+    {% endfor %}
+    {% endif %}
+</head>
+<body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+
+    {{ content }}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p class="follow-us">Follow Us</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/Eventsbydelightfuldecor" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/Eventsbydelightfuldecor" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@eventsbydelightfuldecor?lang=en" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                    <div class="footer-links">
+                        <a href="{{ '/pages/faq.html' | relative_url }}" class="footer-link">FAQ</a>
+                        <a href="{{ '/pages/contact.html' | relative_url }}" class="footer-link">Contact Us</a>
+                    </div>
+                    <p class="copyright">&copy; 2035 by Events by Delightful Decor</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </div> <!-- End main-content-wrapper -->
+
+    <script src="{{ '/js/components.js' | relative_url }}?v=2.0"></script>
+    <script src="{{ '/js/scripts.js' | relative_url }}?v=2.0"></script>
+    {% if page.extra_scripts %}
+    {% for script in page.extra_scripts %}
+    <script src="{{ script }}"></script>
+    {% endfor %}
+    {% endif %}
+    {% if page.inline_script %}
+    <script>
+    {{ page.inline_script }}
+    </script>
+    {% endif %}
+</body>
+</html>

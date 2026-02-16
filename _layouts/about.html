@@ -1,0 +1,114 @@
+---
+layout: default
+---
+
+<div id="main-content-wrapper">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/services.html' | relative_url }}" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/about.html' | relative_url }}" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/testimonials.html' | relative_url }}" class="nav-link">Testimonials</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/gallery.html' | relative_url }}" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/contact.html' | relative_url }}" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/give-a-gift.html' | relative_url }}" class="nav-link">Give-A-Gift</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/faq.html' | relative_url }}" class="nav-link">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">{{ page.page_title }}</h1>
+            <p class="page-subtitle">{{ page.page_subtitle }}</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">{{ page.story_heading }}</h2>
+                    {% for paragraph in page.story_paragraphs %}
+                    <p class="about-description">{{ paragraph }}</p>
+                    {% endfor %}
+                    <div class="about-features">
+                        {% for feature in page.story_features %}
+                        <div class="feature">
+                            <i class="fas fa-{{ feature.icon }}"></i>
+                            <span>{{ feature.text }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="{{ page.story_image | relative_url }}" alt="{{ page.story_image_alt | default: 'Events By Delightful Decor' }}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <div class="mission-content">
+                <h2 class="section-title">{{ page.mission_title }}</h2>
+                <p class="mission-text">{{ page.mission_text }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">{{ page.team_heading | default: "Meet Our Team" }}</h2>
+            <div class="team-grid">
+                {% for member in page.team %}
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="{{ member.image | relative_url }}" alt="{{ member.name }} - {{ member.role }}">
+                    </div>
+                    <div class="team-info">
+                        <h3>{{ member.name }}</h3>
+                        <p class="team-role">{{ member.role }}</p>
+                        <p class="team-bio">{{ member.bio }}</p>
+                        <div class="team-expertise">
+                            {% for skill in member.expertise %}
+                            <span class="expertise-tag">{{ skill }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="container">
+            <h2 class="section-title">{{ page.values_heading | default: "Our Values" }}</h2>
+            <div class="values-grid">
+                {% for value in page.values %}
+                <div class="value-card">
+                    <i class="fas fa-{{ value.icon }}"></i>
+                    <h3>{{ value.title }}</h3>
+                    <p>{{ value.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>

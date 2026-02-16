@@ -1,0 +1,173 @@
+---
+layout: default
+---
+
+<div id="main-content-wrapper">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/services.html' | relative_url }}" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/about.html' | relative_url }}" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/testimonials.html' | relative_url }}" class="nav-link">Testimonials</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/gallery.html' | relative_url }}" class="nav-link">Gallery</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/contact.html' | relative_url }}" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/give-a-gift.html' | relative_url }}" class="nav-link">Give-A-Gift</a></li>
+                        <li class="nav-item"><a href="{{ '/pages/faq.html' | relative_url }}" class="nav-link">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">{{ page.page_title }}</h1>
+            <p class="page-subtitle">{{ page.page_subtitle }}</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="contact-info-title">{{ page.contact_info_title | default: "Get In Touch" }}</h2>
+                    <p class="contact-intro">{{ page.contact_intro }}</p>
+
+                    {% for item in page.contact_items %}
+                    <div class="contact-item">
+                        <i class="fas fa-{{ item.icon }}"></i>
+                        <div>
+                            <h4>{{ item.title }}</h4>
+                            <p>{{ item.content }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <form class="contact-form" id="contact-form" action="{{ page.formspree_url }}" method="POST">
+                    <h3>{{ page.form_title | default: "Send Us a Message" }}</h3>
+
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Events By Delightful Decor">
+                    <input type="hidden" name="_next" value="?success=true">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_replyto" value="">
+
+                    <div id="form-messages" class="form-messages" style="display: none;"></div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventType">Event Type *</label>
+                        <select id="eventType" name="eventType" required>
+                            <option value="">Select Event Type</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="private">Private Party</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="eventDate">Preferred Event Date</label>
+                            <input type="date" id="eventDate" name="eventDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="guestCount">Estimated Guest Count</label>
+                            <input type="number" id="guestCount" name="guestCount" min="1">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Estimated Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select Budget Range</option>
+                            <option value="under-5k">Under $5,000</option>
+                            <option value="5k-10k">$5,000 - $10,000</option>
+                            <option value="10k-25k">$10,000 - $25,000</option>
+                            <option value="25k-50k">$25,000 - $50,000</option>
+                            <option value="over-50k">Over $50,000</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Tell us about your event *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Please describe your vision, any specific requirements, or questions you have..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button" id="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Sending...
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Handle form submission success
+        document.addEventListener('DOMContentLoaded', function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                showSuccessMessage();
+            }
+        });
+
+        function showSuccessMessage() {
+            var successMessage = document.createElement('div');
+            successMessage.className = 'form-success-message';
+            successMessage.innerHTML = '<div style="background: #d4edda; color: #155724; padding: 20px; border-radius: 10px; margin: 20px 0; border: 1px solid #c3e6cb; text-align: center; font-weight: 600;"><i class="fas fa-check-circle" style="font-size: 1.5rem; margin-right: 10px;"></i>Thank you for your message! We\'ll get back to you within 24 hours.</div>';
+            var form = document.getElementById('contact-form');
+            form.parentNode.insertBefore(successMessage, form);
+            setTimeout(function() { if (successMessage.parentNode) successMessage.remove(); }, 10000);
+        }
+    </script>
+
+    <!-- FAQ Quick Links -->
+    <section class="quick-faq">
+        <div class="container">
+            <h2 class="section-title">{{ page.quick_links_title | default: "Quick Questions?" }}</h2>
+            <div class="faq-links">
+                {% for link in page.quick_links %}
+                <a href="{{ link.url }}" class="faq-link-card">
+                    <i class="fas fa-{{ link.icon }}"></i>
+                    <h3>{{ link.title }}</h3>
+                    <p>{{ link.description }}</p>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
