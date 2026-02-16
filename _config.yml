@@ -83,6 +83,7 @@ defaults:
       twitter_description: "View our stunning portfolio of weddings, corporate events, and private parties in Boston."
       twitter_image: "https://eventsbydelightfuldecor.com/images/wedding_img/gallery-wedding-5.jpg"
       canonical: "https://eventsbydelightfuldecor.com/pages/gallery.html"
+      magazine_link: "bookshelf-magazine.html"
 
   # Testimonials
   - scope:

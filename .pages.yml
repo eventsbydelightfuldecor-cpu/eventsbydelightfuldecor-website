@@ -1,6 +1,7 @@
 media:
   input: images
   output: /images
+  extensions: [jpg, jpeg, png, webp, gif, svg]
 
 content:
   - name: homepage
@@ -94,6 +95,7 @@ content:
           - { name: author, label: Author Name, type: string }
           - { name: role, label: Role, type: string }
           - { name: image, label: Image, type: image }
+          - { name: alt, label: Image Alt Text, type: string }
       - name: testimonials
         label: Testimonial Cards
         type: object
@@ -129,6 +131,7 @@ content:
           - { name: content, label: Content (HTML allowed), type: text }
       - { name: formspree_url, label: Formspree Action URL, type: string }
       - { name: form_title, label: Form Heading, type: string }
+      - { name: quick_links_title, label: Quick Links Section Title, type: string }
       - name: quick_links
         label: Quick Link Cards
         type: object
@@ -159,8 +162,10 @@ content:
           - { name: icon, label: Icon Name, type: string }
           - { name: text, label: Text, type: string }
       - { name: story_image, label: Story Image, type: image }
+      - { name: story_image_alt, label: Story Image Alt Text, type: string }
       - { name: mission_title, label: Mission Title, type: string }
       - { name: mission_text, label: Mission Text, type: text }
+      - { name: team_heading, label: Team Section Heading, type: string }
       - name: team
         label: Team Members
         type: object
@@ -174,6 +179,7 @@ content:
             label: Expertise Tags
             type: string
             list: true
+      - { name: values_heading, label: Values Section Heading, type: string }
       - name: values
         label: Values
         type: object
@@ -207,6 +213,7 @@ content:
           - { name: button_link, label: Button Link, type: string }
           - { name: featured, label: Featured?, type: boolean }
           - { name: ribbon_text, label: Ribbon Text, type: string }
+      - { name: steps_heading, label: How It Works Heading, type: string }
       - name: steps
         label: How It Works Steps
         type: object
@@ -215,6 +222,7 @@ content:
           - { name: number, label: Step Number, type: number }
           - { name: title, label: Title, type: string }
           - { name: description, label: Description, type: text }
+      - { name: occasions_heading, label: Perfect For Heading, type: string }
       - name: occasions
         label: Perfect For Occasions
         type: object
