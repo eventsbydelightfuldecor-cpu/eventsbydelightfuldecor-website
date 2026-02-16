@@ -7,3 +7,202 @@ exclude:
   - .pages.yml
   - Gemfile
   - Gemfile.lock
+
+defaults:
+  # Homepage
+  - scope:
+      path: "index.html"
+    values:
+      layout: home
+      title: "Events By Delightful Decor - Luxury Event Planning in Boston"
+      meta_description: "Events By Delightful Decor offers luxury event planning services in Boston including weddings, corporate events, and private parties."
+      meta_keywords: "Boston event planner, luxury wedding planner, corporate event planning, private party planner, Events By Delightful Decor"
+      meta_author: "Events By Delightful Decor"
+      meta_robots: "index, follow"
+      og_title: "Events By Delightful Decor - Luxury Event Planning in Boston"
+      og_description: "Luxury event planning services in Boston including weddings, corporate events, and private parties."
+      og_type: "website"
+      og_url: "https://eventsbydelightfuldecor.com/"
+      og_image: "https://eventsbydelightfuldecor.com/images/section_background.jpg"
+      og_image_width: "1200"
+      og_image_height: "630"
+      twitter_card: "summary_large_image"
+      twitter_title: "Events By Delightful Decor - Luxury Event Planning"
+      twitter_description: "Luxury event planning services in Boston including weddings, corporate events, and private parties."
+      twitter_image: "https://eventsbydelightfuldecor.com/images/section_background.jpg"
+      canonical: "https://eventsbydelightfuldecor.com/"
+      structured_data:
+        "@context": "https://schema.org"
+        "@type": "EventPlanningBusiness"
+        name: "Events By Delightful Decor"
+        "@id": "https://eventsbydelightfuldecor.com"
+        url: "https://eventsbydelightfuldecor.com"
+        telephone: "+16174463717"
+        email: "eventsbydelightfuldecor@gmail.com"
+        address:
+          "@type": "PostalAddress"
+          addressLocality: "Boston"
+          addressRegion: "MA"
+          addressCountry: "US"
+        image: "https://eventsbydelightfuldecor.com/images/Events_By_Delightful_Decor.svg"
+
+  # Services
+  - scope:
+      path: "pages/services.html"
+    values:
+      layout: services
+      title: "Services - Events By Delightful Decor"
+      meta_description: "Comprehensive event planning services including weddings, corporate events, private parties, and event coordination in Boston."
+      meta_keywords: "Boston wedding planning, corporate event planning, private party planning, event coordination, full-service event planning, luxury event services, Boston event planner"
+      og_title: "Event Planning Services - Boston | Events By Delightful Decor"
+      og_description: "Comprehensive event planning services including weddings, corporate events, private parties, and event coordination in Boston. Professional, luxury service."
+      og_type: "website"
+      og_url: "https://eventsbydelightfuldecor.com/pages/services.html"
+      og_image: "https://eventsbydelightfuldecor.com/images/section_background.jpg"
+      twitter_card: "summary_large_image"
+      twitter_title: "Event Planning Services - Events By Delightful Decor"
+      twitter_description: "Comprehensive event planning services in Boston including weddings, corporate events, and private parties."
+      twitter_image: "https://eventsbydelightfuldecor.com/images/section_background.jpg"
+      canonical: "https://eventsbydelightfuldecor.com/pages/services.html"
+
+  # Gallery
+  - scope:
+      path: "pages/gallery.html"
+    values:
+      layout: gallery
+      title: "Gallery - Events By Delightful Decor"
+      meta_description: "View our stunning portfolio of weddings, corporate events, and private parties. See the attention to detail in every event we plan."
+      meta_keywords: "Boston wedding photos, event planning portfolio, corporate event gallery, luxury wedding photos, event design Boston, wedding gallery, Boston event photos"
+      og_title: "Event Gallery - Wedding & Event Photos | Events By Delightful Decor"
+      og_description: "View our stunning portfolio of weddings, corporate events, and private parties. See the attention to detail and passion in every event we plan."
+      og_type: "website"
+      og_url: "https://eventsbydelightfuldecor.com/pages/gallery.html"
+      og_image: "https://eventsbydelightfuldecor.com/images/wedding_img/gallery-wedding-5.jpg"
+      twitter_card: "summary_large_image"
+      twitter_title: "Event Gallery - Events By Delightful Decor"
+      twitter_description: "View our stunning portfolio of weddings, corporate events, and private parties in Boston."
+      twitter_image: "https://eventsbydelightfuldecor.com/images/wedding_img/gallery-wedding-5.jpg"
+      canonical: "https://eventsbydelightfuldecor.com/pages/gallery.html"
+
+  # Testimonials
+  - scope:
+      path: "pages/testimonials.html"
+    values:
+      layout: testimonials
+      title: "Testimonials - Events By Delightful Decor"
+      meta_description: "Read what our clients say about Events By Delightful Decor. Testimonials from satisfied couples and corporate clients in Boston."
+      og_title: "Testimonials - Events By Delightful Decor"
+      og_description: "Read what our clients say about Events By Delightful Decor. Testimonials from satisfied couples and corporate clients in Boston."
+      og_type: "website"
+      og_url: "https://eventsbydelightfuldecor.com/pages/testimonials.html"
+      og_image: "https://eventsbydelightfuldecor.com/images/Private Party/testimonial-featured.jpg"
+      twitter_card: "summary_large_image"
+      twitter_title: "Testimonials - Events By Delightful Decor"
+      twitter_description: "Read what our clients say about Events By Delightful Decor."
+      twitter_image: "https://eventsbydelightfuldecor.com/images/Private Party/testimonial-featured.jpg"
+      canonical: "https://eventsbydelightfuldecor.com/pages/testimonials.html"
+
+  # Contact
+  - scope:
+      path: "pages/contact.html"
+    values:
+      layout: contact
+      title: "Contact - Events By Delightful Decor"
+      meta_description: "Contact Events By Delightful Decor for your Boston wedding and event planning needs. Get in touch to start planning your perfect event."
+      meta_keywords: "contact Boston event planner, Events By Delightful Decor contact, wedding planner consultation, event planning inquiry Boston, contact us"
+      og_title: "Contact Us - Boston Event Planner | Events By Delightful Decor"
+      og_description: "Contact Events By Delightful Decor for your Boston wedding and event planning needs. Get in touch to start planning your perfect event."
+      og_type: "website"
+      og_url: "https://eventsbydelightfuldecor.com/pages/contact.html"
+      og_image: "https://eventsbydelightfuldecor.com/images/Private Party/contact_us.jpg"
+      twitter_card: "summary_large_image"
+      twitter_title: "Contact Us - Events By Delightful Decor"
+      twitter_description: "Contact us to start planning your perfect event in Boston."
+      twitter_image: "https://eventsbydelightfuldecor.com/images/Private Party/contact_us.jpg"
+      canonical: "https://eventsbydelightfuldecor.com/pages/contact.html"
+      structured_data:
+        "@context": "https://schema.org"
+        "@type": "LocalBusiness"
+        name: "Events By Delightful Decor"
+        "@id": "https://eventsbydelightfuldecor.com"
+        url: "https://eventsbydelightfuldecor.com"
+        telephone: "+16174463717"
+        email: "eventsbydelightfuldecor@gmail.com"
+        address:
+          "@type": "PostalAddress"
+          addressLocality: "Boston"
+          addressRegion: "MA"
+          addressCountry: "US"
+        geo:
+          "@type": "GeoCoordinates"
+          latitude: 42.3601
+          longitude: -71.0589
+        openingHoursSpecification:
+          - "@type": "OpeningHoursSpecification"
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+            opens: "09:00"
+            closes: "18:00"
+          - "@type": "OpeningHoursSpecification"
+            dayOfWeek: "Saturday"
+            opens: "10:00"
+            closes: "16:00"
+        priceRange: "$$$$"
+        image: "https://eventsbydelightfuldecor.com/images/Events_By_Delightful_Decor.svg"
+
+  # About
+  - scope:
+      path: "pages/about.html"
+    values:
+      layout: about
+      title: "About - Events By Delightful Decor"
+      meta_description: "Learn about Dynell Andrews and Events By Delightful Decor - Boston's premier luxury event planning service with years of experience."
+      meta_keywords: "Dynell Andrews, Boston event planner, luxury event planning, professional wedding planner, Events By Delightful Decor story, about us, Boston wedding coordinator"
+      og_title: "About Dynell Andrews - Boston Event Planner | Events By Delightful Decor"
+      og_description: "Meet Dynell Andrews and learn about Events By Delightful Decor - Boston's premier luxury event planning service with years of experience creating unforgettable events."
+      og_type: "website"
+      og_url: "https://eventsbydelightfuldecor.com/pages/about.html"
+      og_image: "https://eventsbydelightfuldecor.com/images/Events_By_Delightful_Decor.svg"
+      twitter_card: "summary_large_image"
+      twitter_title: "About - Events By Delightful Decor"
+      twitter_description: "Learn about Dynell Andrews and Events By Delightful Decor - Boston's premier luxury event planning service."
+      twitter_image: "https://eventsbydelightfuldecor.com/images/Events_By_Delightful_Decor.svg"
+      canonical: "https://eventsbydelightfuldecor.com/pages/about.html"
+
+  # Give-A-Gift
+  - scope:
+      path: "pages/give-a-gift.html"
+    values:
+      layout: give-a-gift
+      title: "Give-A-Gift - Events By Delightful Decor"
+      body_class: "give-a-gift-page"
+      meta_description: "At Events by Delightful Decor, the team believes that everyone deserves to be celebrated and cherished. By offering our expertise and resources to charities, we are able to make a positive impact and bring joy to those who need it most."
+      meta_keywords: "event planning gift certificate, wedding planning gift, Boston event gifts, luxury gift basket, event planner gift card, charitable giving, gift certificates Boston"
+      og_title: "Give a Gift - Event Planning Certificates | Events By Delightful Decor"
+      og_description: "Give the gift of perfect planning with luxury gift certificates for weddings, corporate events, and celebrations in Boston. Support our charitable giving program."
+      og_type: "website"
+      og_url: "https://eventsbydelightfuldecor.com/pages/give-a-gift.html"
+      og_image: "https://eventsbydelightfuldecor.com/images/section_background.jpg"
+      twitter_card: "summary_large_image"
+      twitter_title: "Give a Gift - Events By Delightful Decor"
+      twitter_description: "Give the gift of perfect planning with luxury event certificates and support our charitable giving program."
+      twitter_image: "https://eventsbydelightfuldecor.com/images/section_background.jpg"
+      canonical: "https://eventsbydelightfuldecor.com/pages/give-a-gift.html"
+
+  # FAQ
+  - scope:
+      path: "pages/faq.html"
+    values:
+      layout: faq
+      title: "FAQ - Events By Delightful Decor"
+      meta_description: "Frequently asked questions about Events By Delightful Decor's wedding and event planning services in Boston. Get answers to common questions."
+      meta_keywords: "event planning FAQ, wedding planning questions, Boston event planner FAQ, event planning cost, planning timeline, wedding FAQ, corporate event questions"
+      og_title: "FAQ - Event Planning Questions | Events By Delightful Decor"
+      og_description: "Frequently asked questions about Events By Delightful Decor's wedding and event planning services in Boston."
+      og_type: "website"
+      og_url: "https://eventsbydelightfuldecor.com/pages/faq.html"
+      og_image: "https://eventsbydelightfuldecor.com/images/section_background.jpg"
+      twitter_card: "summary_large_image"
+      twitter_title: "FAQ - Events By Delightful Decor"
+      twitter_description: "Get answers to frequently asked questions about our event planning services in Boston."
+      twitter_image: "https://eventsbydelightfuldecor.com/images/section_background.jpg"
+      canonical: "https://eventsbydelightfuldecor.com/pages/faq.html"
