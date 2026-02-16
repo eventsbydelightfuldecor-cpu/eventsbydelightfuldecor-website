@@ -40,6 +40,11 @@ Thumbs.db
 videos/Hero_Video_2_original.mp4
 images_backup/
 
+# Jekyll build output
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
 # Generated files
 generate_guide.py
 *.pdf
